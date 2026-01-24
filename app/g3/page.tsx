@@ -10,18 +10,52 @@ export default function G3Resources() {
         Propane installation, service, and certification resources
       </p>
 
-      {/* Placeholder for Future Tools */}
+      {/* Practice Exam Simulator */}
       <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-8 mb-8">
-        <h2 className="text-2xl font-bold text-claude-text-primary mb-4">🚀 Study Tools Coming Soon</h2>
-        <p className="text-claude-text-secondary mb-4">
-          Interactive study tools and practice exams are currently being developed. Check back soon for:
+        <h2 className="text-2xl font-bold text-claude-text-primary mb-4">📝 TSSA G3 Practice Exam Simulator</h2>
+        <p className="text-claude-text-secondary mb-6">
+          Comprehensive practice exam simulator with 200 realistic questions covering all G3 Propane certification topics.
+          Free and fully accessible - no paywalls or restrictions.
         </p>
-        <ul className="list-disc list-inside text-claude-text-secondary space-y-2 mb-4">
-          <li>G3 Practice Exam Simulator</li>
-          <li>Code Reference Quick Lookup</li>
-          <li>Flashcards & Study Guides</li>
-          <li>Propane System Scenarios</li>
-        </ul>
+        <div className="grid md:grid-cols-2 gap-4 mb-6">
+          <div className="flex items-start space-x-3">
+            <span className="text-claude-accent-orange text-xl">✓</span>
+            <div>
+              <p className="text-claude-text-primary font-semibold">200 Practice Questions</p>
+              <p className="text-claude-text-secondary text-sm">Full coverage of G3 exam topics</p>
+            </div>
+          </div>
+          <div className="flex items-start space-x-3">
+            <span className="text-claude-accent-orange text-xl">✓</span>
+            <div>
+              <p className="text-claude-text-primary font-semibold">Instant Feedback</p>
+              <p className="text-claude-text-secondary text-sm">Detailed explanations for each answer</p>
+            </div>
+          </div>
+          <div className="flex items-start space-x-3">
+            <span className="text-claude-accent-orange text-xl">✓</span>
+            <div>
+              <p className="text-claude-text-primary font-semibold">Progress Tracking</p>
+              <p className="text-claude-text-secondary text-sm">Monitor your performance over time</p>
+            </div>
+          </div>
+          <div className="flex items-start space-x-3">
+            <span className="text-claude-accent-orange text-xl">✓</span>
+            <div>
+              <p className="text-claude-text-primary font-semibold">Mobile Friendly</p>
+              <p className="text-claude-text-secondary text-sm">Study anywhere, anytime</p>
+            </div>
+          </div>
+        </div>
+        <a
+          href="/g3-exam-simulator.html"
+          className="inline-flex items-center px-6 py-3 bg-claude-accent-orange hover:bg-claude-accent-orange-hover text-white font-semibold rounded-lg transition"
+        >
+          Launch G3 Practice Exam Simulator
+          <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
       </div>
 
       {/* Official Resources */}
