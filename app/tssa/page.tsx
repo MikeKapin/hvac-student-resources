@@ -1,72 +1,35 @@
 export default function TSSAResources() {
-  const resources = [
-    {
-      title: 'TSSA Official Website',
-      url: 'www.tssa.org',
-      description: 'Technical Standards and Safety Authority main site',
-      icon: '🏢'
-    },
-    {
-      title: 'TSSA Fuels Dashboard',
-      url: 'www.tssa.org/fuels-dashboard',
-      description: 'Main hub for fuels safety, regulatory updates, CAD documents, bulletins, and FAQs',
-      icon: '📊'
-    },
-    {
-      title: 'Gas Technician Certification',
-      url: 'www.tssa.org/fuels-industry-professional',
-      description: 'Gas technician certification requirements and information',
-      icon: '🎓'
-    },
-    {
-      title: 'Accredited Training Programs',
-      url: 'www.tssa.org/accredited-training',
-      description: 'Find accredited training programs and requirements',
-      icon: '📚'
-    },
-    {
-      title: 'TSSA Incident Hotline',
-      url: '1-877-682-8772',
-      description: 'Report safety incidents (Press 1 for incident hotline)',
-      icon: '🛡️',
-      isPhone: true
-    },
-  ];
+  const resources = {
+    official: [
+      { title: 'TSSA Official Website', url: 'https://www.tssa.org/', description: 'Technical Standards and Safety Authority main site' },
+      { title: 'TSSA Fuels Dashboard', url: 'https://www.tssa.org/fuels-dashboard', description: 'Main hub for fuels safety, regulatory updates, CAD documents, bulletins, and FAQs' },
+    ],
+    safety: [
+      { title: 'TSSA Incident Hotline', url: 'tel:1-877-682-8772', description: 'Report safety incidents: 1-877-682-8772 (Press 1)' },
+    ],
+    certification: [
+      { title: 'Gas Technician Certification', url: 'https://www.tssa.org/fuels-industry-professional', description: 'Gas technician certification requirements and information' },
+      { title: 'Accredited Training Programs', url: 'https://www.tssa.org/accredited-training', description: 'Find accredited training programs and requirements' },
+    ],
+  };
 
-  const InfoCard = ({ title, url, description, icon, isPhone }: {
-    title: string;
-    url: string;
-    description: string;
-    icon: string;
-    isPhone?: boolean;
-  }) => (
-    <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-6">
-      <div className="flex items-start space-x-4">
-        <div className="text-4xl">{icon}</div>
-        <div className="flex-1">
-          <h3 className="text-lg font-bold text-claude-text-primary mb-2">
-            {title}
-          </h3>
-          <p className="text-claude-text-secondary text-sm mb-3">
-            {description}
-          </p>
-          {isPhone ? (
-            <a
-              href={`tel:${url}`}
-              className="inline-flex items-center text-mike-orange hover:text-mike-orange/80 font-mono text-sm"
-            >
-              📞 {url}
-            </a>
-          ) : (
-            <div className="bg-claude-dark-bg border border-claude-dark-border rounded px-3 py-2">
-              <p className="text-claude-text-secondary font-mono text-xs">
-                {url}
-              </p>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
+  const ResourceCard = ({ title, url, description }: { title: string; url: string; description: string }) => (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-claude-bg-secondary border border-claude-border rounded-lg p-6 hover:bg-claude-bg-hover transition group"
+    >
+      <h3 className="text-lg font-bold text-claude-text-primary mb-2 group-hover:text-claude-accent-orange transition flex items-center justify-between">
+        {title}
+        <svg className="w-5 h-5 text-claude-text-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </h3>
+      <p className="text-claude-text-secondary text-sm">
+        {description}
+      </p>
+    </a>
   );
 
   return (
@@ -74,29 +37,38 @@ export default function TSSAResources() {
       <h1 className="text-4xl font-bold text-claude-accent-orange mb-4">
         TSSA Regulations & Resources
       </h1>
-      <p className="text-xl text-claude-text-secondary mb-6">
+      <p className="text-xl text-claude-text-secondary mb-12">
         Technical Standards and Safety Authority regulations, bulletins, and certification information
       </p>
 
-      {/* Notice about TSSA website */}
-      <div className="bg-claude-bg-secondary border-l-4 border-mike-orange rounded-lg p-6 mb-12">
-        <div className="flex items-start space-x-3">
-          <span className="text-2xl">ℹ️</span>
-          <div>
-            <h3 className="text-lg font-semibold text-claude-text-primary mb-2">About TSSA Website Access</h3>
-            <p className="text-claude-text-secondary text-sm leading-relaxed">
-              The TSSA website has security protections that may block automated access.
-              To visit TSSA resources, manually type or copy the URLs shown below into your browser's address bar.
-            </p>
-          </div>
+      {/* Official Sites */}
+      <div className="mb-12">
+        <h2 className="text-2xl font-bold text-claude-text-primary mb-6">🏢 Official Sites</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {resources.official.map((resource) => (
+            <ResourceCard key={resource.url} {...resource} />
+          ))}
         </div>
       </div>
 
-      {/* Resources */}
-      <div className="grid md:grid-cols-2 gap-6">
-        {resources.map((resource) => (
-          <InfoCard key={resource.url} {...resource} />
-        ))}
+      {/* Safety */}
+      <div className="mb-12">
+        <h2 className="text-2xl font-bold text-claude-text-primary mb-6">🛡️ Safety & Compliance</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {resources.safety.map((resource) => (
+            <ResourceCard key={resource.url} {...resource} />
+          ))}
+        </div>
+      </div>
+
+      {/* Certification */}
+      <div className="mb-12">
+        <h2 className="text-2xl font-bold text-claude-text-primary mb-6">🎓 Certification & Training</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {resources.certification.map((resource) => (
+            <ResourceCard key={resource.url} {...resource} />
+          ))}
+        </div>
       </div>
     </div>
   );
