@@ -60,6 +60,56 @@ export default function G3Resources() {
         </a>
       </div>
 
+      {/* Gas Tech AI Tutor */}
+      <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-8 mb-8">
+        <h2 className="text-2xl font-bold text-claude-text-primary mb-4">🤖 Gas Tech AI Tutor</h2>
+        <p className="text-claude-text-secondary mb-6">
+          Interactive AI-powered tutor for G3 and G2 certification preparation. Chat with an expert AI assistant that understands Canadian gas codes,
+          safety procedures, and exam requirements. Covers all 9 core modules with personalized learning.
+        </p>
+        <div className="grid md:grid-cols-2 gap-4 mb-6">
+          <div className="flex items-start space-x-3">
+            <span className="text-claude-accent-orange text-xl">✓</span>
+            <div>
+              <p className="text-claude-text-primary font-semibold">AI-Powered Learning</p>
+              <p className="text-claude-text-secondary text-sm">Get instant answers to your questions</p>
+            </div>
+          </div>
+          <div className="flex items-start space-x-3">
+            <span className="text-claude-accent-orange text-xl">✓</span>
+            <div>
+              <p className="text-claude-text-primary font-semibold">9 Core Modules</p>
+              <p className="text-claude-text-secondary text-sm">Safety, Tools, Gas Properties, Codes & more</p>
+            </div>
+          </div>
+          <div className="flex items-start space-x-3">
+            <span className="text-claude-accent-orange text-xl">✓</span>
+            <div>
+              <p className="text-claude-text-primary font-semibold">Conversation Mode</p>
+              <p className="text-claude-text-secondary text-sm">Natural chat interface for interactive learning</p>
+            </div>
+          </div>
+          <div className="flex items-start space-x-3">
+            <span className="text-claude-accent-orange text-xl">✓</span>
+            <div>
+              <p className="text-claude-text-primary font-semibold">Completely Free</p>
+              <p className="text-claude-text-secondary text-sm">No paywalls or subscriptions required</p>
+            </div>
+          </div>
+        </div>
+        <a
+          href="/gas-tech-tutor/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-6 py-3 bg-claude-accent-orange hover:bg-claude-accent-orange-hover text-white font-semibold rounded-lg transition"
+        >
+          Launch Gas Tech AI Tutor
+          <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
       {/* Study Guide */}
       <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-8 mb-8">
         <h2 className="text-2xl font-bold text-claude-text-primary mb-4">📚 TSSA G3 Study Guide</h2>
