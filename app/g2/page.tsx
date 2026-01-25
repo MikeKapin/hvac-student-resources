@@ -60,6 +60,25 @@ export default function G2Resources() {
         </a>
       </div>
 
+      {/* Study Guide */}
+      <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-8 mb-8">
+        <h2 className="text-2xl font-bold text-claude-text-primary mb-4">📚 TSSA G2 Study Guide</h2>
+        <p className="text-claude-text-secondary mb-6">
+          Comprehensive study guide with detailed exam preparation strategies, study tips, and complete unit coverage for your G2 certification.
+        </p>
+        <a
+          href="/g2-study-guide.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-6 py-3 bg-claude-accent-orange hover:bg-claude-accent-orange-hover text-white font-semibold rounded-lg transition"
+        >
+          View G2 Study Guide
+          <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
       {/* Official Resources */}
       <div className="grid md:grid-cols-2 gap-6">
         <Link

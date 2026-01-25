@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSSA G3 Study Guide - Mike Kapin</title>
+    <meta name="description" content="Comprehensive TSSA G3 Study Guide with detailed exam preparation strategies, study tips, and complete unit coverage for 2025 by Mike Kapin, HVAC Educator.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1F1F1F;
+            min-height: 100vh;
+            color: #E8E8E8;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #2A2A2A;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #3F3F3F;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #E8E8E8;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #CC785C;
+        }
+
+        nav a {
+            color: #E8E8E8;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #CC785C;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #2A2A2A;
+            color: #E8E8E8;
+            padding: 4rem 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 3px solid #CC785C;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #E8E8E8;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #A0A0A0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(204, 120, 92, 0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            margin: 0.5rem;
+            font-weight: bold;
+            color: #CC785C;
+            border: 1px solid #CC785C;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        /* Coming Soon Section */
+        .coming-soon {
+            background: #2A2A2A;
+            border: 2px solid #CC785C;
+            border-radius: 20px;
+            padding: 4rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .coming-soon h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #E8E8E8;
+        }
+
+        .coming-soon p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            color: #A0A0A0;
+        }
+
+        .coming-soon .highlight {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #CC785C;
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: #2A2A2A;
+            border: 1px solid #3F3F3F;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+            border-color: #CC785C;
+        }
+
+        .info-card h3 {
+            color: #E8E8E8;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card h3::before {
+            content: "✓";
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #CC785C;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #A0A0A0;
+        }
+
+        .info-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #CC785C;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        /* Features Section */
+        .features {
+            background: #2A2A2A;
+            border: 1px solid #3F3F3F;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .features h2 {
+            color: #E8E8E8;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            background: #1F1F1F;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #CC785C;
+            transition: all 0.3s;
+            border: 1px solid #3F3F3F;
+        }
+
+        .feature-item:hover {
+            border-left-width: 8px;
+            transform: translateX(5px);
+        }
+
+        .feature-item h4 {
+            color: #E8E8E8;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            color: #A0A0A0;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #2A2A2A;
+            border: 2px solid #CC785C;
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #E8E8E8;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #A0A0A0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #CC785C;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(204, 120, 92, 0.4);
+            background: #d68969;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #CC785C;
+            border: 2px solid #CC785C;
+        }
+
+        .cta-button.secondary:hover {
+            background: #CC785C;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2A2A2A;
+            padding: 30px 20px;
+            border-top: 3px solid #CC785C;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mike-kapin-branding {
+            margin-bottom: 20px;
+        }
+
+        .copyright p {
+            color: #A0A0A0;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .coming-soon {
+                padding: 2rem;
+            }
+
+            .coming-soon h2 {
+                font-size: 1.8rem;
+            }
+
+            .coming-soon p {
+                font-size: 1.1rem;
+            }
+
+            nav a {
+                margin-left: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                width: 100%;
+            }
+
+            .footer {
+                padding: 20px 15px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-card,
+        .feature-item {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .info-card:nth-child(1) { animation-delay: 0.1s; }
+        .info-card:nth-child(2) { animation-delay: 0.2s; }
+        .info-card:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">Mike <span>Kapin</span></a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="g2-exam-simulator.html">G2 Exam Simulator</a>
+                <a href="g3-exam-simulator.html">G3 Exam Simulator</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>TSSA G3 Study Guide</h1>
+        <p>Your comprehensive guide to G3 certification success</p>
+        <p style="font-size: 0.9rem; opacity: 0.9; margin-top: 1rem;">Published: August 15, 2024 | Mike Kapin, HVAC Educator</p>
+        <div>
+            <span class="badge">CSA Compliant</span>
+            <span class="badge">2025 Updated</span>
+            <span class="badge">Complete Coverage</span>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Coming Soon Announcement -->
+        <div class="coming-soon">
+            <h2>Coming Soon</h2>
+            <p class="highlight">2025 CSA Compliant Resources Modules for G3</p>
+            <p>Comprehensive, CSA-compliant resources modules designed specifically for TSSA G3 certification. These modules will feature interactive learning, real-world scenarios, and exam-focused preparation strategies.</p>
+            <p>Expected Launch: <strong>January 2026</strong></p>
+        </div>
+
+        <!-- What to Expect -->
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Complete Unit Coverage</h3>
+                <ul>
+                    <li>CSA B149.1 Natural Gas Code</li>
+                    <li>CSA B149.2 Propane Code</li>
+                    <li>Gas Appliance Fundamentals</li>
+                    <li>Piping Systems & Installation</li>
+                    <li>Safety Standards & Regulations</li>
+                    <li>Technical Drawing Interpretation</li>
+                    <li>Combustion Analysis</li>
+                    <li>Ventilation Requirements</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Study Strategies</h3>
+                <ul>
+                    <li>Personalized learning paths</li>
+                    <li>Interactive practice questions</li>
+                    <li>Video tutorials and demonstrations</li>
+                    <li>Code reference guides</li>
+                    <li>Exam simulation practice</li>
+                    <li>Progress tracking dashboard</li>
+                    <li>Mobile-friendly access</li>
+                    <li>Expert instructor support</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Exam Preparation</h3>
+                <ul>
+                    <li>1000+ practice questions</li>
+                    <li>Detailed answer explanations</li>
+                    <li>Timed practice exams</li>
+                    <li>Performance analytics</li>
+                    <li>Weak area identification</li>
+                    <li>Study schedule planner</li>
+                    <li>Quick reference materials</li>
+                    <li>Last-minute review guides</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features">
+            <h2>What Makes This Resource Different</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h4>CSA 2025 Compliant</h4>
+                    <p>Fully updated to reflect the latest CSA B149.1 and B149.2 code changes for 2025</p>
+                </div>
+                <div class="feature-item">
+                    <h4>TSSA Aligned</h4>
+                    <p>Content specifically designed to match TSSA G3 examination objectives and format</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Interactive Learning</h4>
+                    <p>Engage with dynamic content, quizzes, and hands-on exercises throughout each module</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Real-World Scenarios</h4>
+                    <p>Learn through practical case studies and field-tested examples from experienced professionals</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Mobile Accessible</h4>
+                    <p>Study anywhere, anytime with full mobile and tablet optimization</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Progress Tracking</h4>
+                    <p>Monitor your learning journey with detailed analytics and performance insights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Ready to Start Your G3 Journey?</h2>
+            <p>Start practicing with the free G3 Exam Simulator</p>
+            <div class="cta-buttons">
+                <a href="g3-exam-simulator.html" class="cta-button">Start G3 Practice Exam</a>
+                <a href="g2-exam-simulator.html" class="cta-button secondary">G2 Practice Exam</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="mike-kapin-branding">
+                <p style="color: #A0A0A0; margin-bottom: 8px;">Created by</p>
+                <h3 style="color: #CC785C; font-size: 1.8em; margin-bottom: 4px;">Mike Kapin</h3>
+                <p style="color: #A0A0A0; font-size: 1.1em;">HVAC Educator</p>
+            </div>
+            <div class="copyright">
+                <p style="color: #A0A0A0; font-size: 0.9em; line-height: 1.6;">
+                    Free educational resources | Not affiliated with Fanshawe College or any business entity<br>
+                    The TSSA G3 Study Guide is designed for educational purposes only and is not affiliated with or endorsed by TSSA (Technical Standards and Safety Authority).
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
