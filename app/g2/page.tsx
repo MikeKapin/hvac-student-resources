@@ -14,14 +14,14 @@ export default function G2Resources() {
       <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-8 mb-8">
         <h2 className="text-2xl font-bold text-claude-text-primary mb-4">📝 TSSA G2 Practice Exam Simulator</h2>
         <p className="text-claude-text-secondary mb-6">
-          Comprehensive practice exam simulator with 200 realistic questions covering all G2 Natural Gas certification topics.
+          Comprehensive practice exam simulator with over 700 TSSA sample questions covering all G2 Natural Gas certification topics.
           Free and fully accessible - no paywalls or restrictions.
         </p>
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div className="flex items-start space-x-3">
             <span className="text-claude-accent-orange text-xl">✓</span>
             <div>
-              <p className="text-claude-text-primary font-semibold">200 Practice Questions</p>
+              <p className="text-claude-text-primary font-semibold">700+ Practice Questions</p>
               <p className="text-claude-text-secondary text-sm">Full coverage of G2 exam topics</p>
             </div>
           </div>
