@@ -49,6 +49,8 @@ export default function G2Resources() {
         </div>
         <a
           href="/g2-exam-simulator.html"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center px-6 py-3 bg-claude-accent-orange hover:bg-claude-accent-orange-hover text-white font-semibold rounded-lg transition"
         >
           Launch G2 Practice Exam Simulator
