@@ -62,38 +62,38 @@ export default function G2Resources() {
 
       {/* Gas Tech AI Tutor */}
       <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-8 mb-8">
-        <h2 className="text-2xl font-bold text-claude-text-primary mb-4">🤖 Gas Tech AI Tutor</h2>
+        <h2 className="text-2xl font-bold text-claude-text-primary mb-4">🤖 Gas Tech AI Tutor - Powered by Claude Sonnet 4.5</h2>
         <p className="text-claude-text-secondary mb-6">
-          Interactive AI-powered tutor for G3 and G2 certification preparation. Chat with an expert AI assistant that understands Canadian gas codes,
-          safety procedures, and exam requirements. Covers all 9 core modules with personalized learning.
+          Professional AI tutor powered by Anthropic Claude Sonnet 4.5 for G2 certification preparation. Get instant, detailed answers about CSA B149.1-25 & B149.2-25 codes,
+          advanced commercial installations, and complex gas systems. Covers Units 10-24 with real-time CSA code references and expert-level guidance.
         </p>
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div className="flex items-start space-x-3">
             <span className="text-claude-accent-orange text-xl">✓</span>
             <div>
-              <p className="text-claude-text-primary font-semibold">AI-Powered Learning</p>
-              <p className="text-claude-text-secondary text-sm">Get instant answers to your questions</p>
+              <p className="text-claude-text-primary font-semibold">Claude Sonnet 4.5 AI</p>
+              <p className="text-claude-text-secondary text-sm">Advanced AI with deep Canadian gas code knowledge</p>
             </div>
           </div>
           <div className="flex items-start space-x-3">
             <span className="text-claude-accent-orange text-xl">✓</span>
             <div>
-              <p className="text-claude-text-primary font-semibold">9 Core Modules</p>
-              <p className="text-claude-text-secondary text-sm">Safety, Tools, Gas Properties, Codes & more</p>
+              <p className="text-claude-text-primary font-semibold">Units 10-24 Coverage</p>
+              <p className="text-claude-text-secondary text-sm">Advanced piping, controls, commercial systems & more</p>
             </div>
           </div>
           <div className="flex items-start space-x-3">
             <span className="text-claude-accent-orange text-xl">✓</span>
             <div>
-              <p className="text-claude-text-primary font-semibold">Conversation Mode</p>
-              <p className="text-claude-text-secondary text-sm">Natural chat interface for interactive learning</p>
+              <p className="text-claude-text-primary font-semibold">Real-Time Code References</p>
+              <p className="text-claude-text-secondary text-sm">Instant CSA B149.1-25 & B149.2-25 section lookup</p>
             </div>
           </div>
           <div className="flex items-start space-x-3">
             <span className="text-claude-accent-orange text-xl">✓</span>
             <div>
-              <p className="text-claude-text-primary font-semibold">Completely Free</p>
-              <p className="text-claude-text-secondary text-sm">No paywalls or subscriptions required</p>
+              <p className="text-claude-text-primary font-semibold">PWA Installable</p>
+              <p className="text-claude-text-secondary text-sm">Works offline - install on phone like an app</p>
             </div>
           </div>
         </div>
