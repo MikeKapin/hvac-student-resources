@@ -97,8 +97,6 @@ export default function G2Resources() {
             </div>
           </div>
         </div>
-        {/* TODO: Update this URL after deploying gas-tech-tutor as separate Netlify site
-            See: gas-tech-tutor/NETLIFY_DEPLOYMENT.md for instructions */}
         <a
           href="https://gas-tech-tutor.netlify.app"
           target="_blank"
