@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Wrench, BookOpen, CheckCircle, AlertTriangle, CreditCard } from 'lucide-react';
+import { Wrench, BookOpen, CheckCircle, AlertTriangle } from 'lucide-react';
 import { CertificationLevel } from '@/types';
 import { useSubscription } from '@/contexts/SubscriptionContext';
 import SubscriptionBanner from '@/components/subscription/SubscriptionBanner';
@@ -47,20 +47,8 @@ const TutorSelection: React.FC<TutorSelectionProps> = ({ onSelectLevel }) => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col justify-center px-4 py-8">
         <div className="max-w-md mx-auto w-full space-y-6">
-          {/* Subscription Banner */}
+          {/* Subscription Banner - Disabled for free version */}
           <SubscriptionBanner />
-
-          {/* View Pricing Button */}
-          <button
-            onClick={() => setShowPricingModal(true)}
-            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl border border-blue-500/30 mb-6"
-            aria-label="View pricing plans"
-          >
-            <div className="flex items-center justify-center space-x-3">
-              <CreditCard className="h-5 w-5" />
-              <span>View All Pricing Plans</span>
-            </div>
-          </button>
 
           <div className="text-center mb-8">
             <h2 className="text-xl font-semibold text-white mb-2 tracking-wide">Select Your Certification Level</h2>
