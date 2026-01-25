@@ -1,0 +1,64 @@
+{
+  "name": "Code Compass - CSA Gas Codes Search",
+  "short_name": "Code Compass",
+  "description": "Search CSA B149.1-25, B149.2-25 gas codes and regulations instantly. Perfect for gas technicians, HVAC students, and contractors.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#2d3748",
+  "background_color": "#1a1a1a",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["utilities", "productivity", "education"],
+  "icons": [
+    {
+      "src": "/icons/icon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Search B149.1-25",
+      "short_name": "B149.1-25",
+      "description": "Search CSA B149.1-25 natural gas codes",
+      "url": "/?search=b149-1",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Search B149.2-25",
+      "short_name": "B149.2-25",
+      "description": "Search CSA B149.2-25 propane codes",
+      "url": "/?search=b149-2",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Search Regulations",
+      "short_name": "Regulations",
+      "description": "Search gas regulations database",
+      "url": "/?search=regulations",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}
