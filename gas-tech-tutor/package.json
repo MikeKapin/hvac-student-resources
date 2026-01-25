@@ -1,35 +1,30 @@
 {
   "name": "gas-tech-tutor-mikekapin",
-  "version": "1.0.0",
-  "description": "Free AI-powered Gas Technician Tutor - Mike Kapin HVAC Education",
-  "main": "index.js",
+  "version": "2.0.0",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
+    "lucide-react": "^0.460.0",
+    "next": "15.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "lucide-react": "^0.263.1",
-    "marked": "^5.1.1",
-    "dompurify": "^3.0.3"
+    "react-markdown": "^10.1.0",
+    "stripe": "^17.7.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "vite": "^4.4.5",
-    "tailwindcss": "^3.3.3",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.27"
-  },
-  "author": "Mike Kapin",
-  "license": "MIT",
-  "keywords": ["TSSA", "G3", "G2", "Gas Technician", "CSA", "AI Tutor", "Education", "HVAC", "Free"]
+    "eslint": "^8.0.0",
+    "eslint-config-next": "15.5.3",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5.0.0"
+  }
 }

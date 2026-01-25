@@ -1,93 +1,61 @@
-// TSSA G3 Gas Technician Tutor - Service Worker
-const CACHE_NAME = 'g3-tutor-v1.0';
+const CACHE_NAME = 'gas-tutor-pro-v1';
 const urlsToCache = [
   '/',
+  '/icon-192x192.png',
+  '/icon-512x512.png',
   '/manifest.json',
-  '/G3Tudor.png',
-  '/src/main.jsx',
-  '/src/App.jsx',
-  '/src/index.css'
 ];
 
-// Install Service Worker
+// Install event
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('G3 Tutor cache opened');
         return cache.addAll(urlsToCache);
       })
-      .catch((error) => {
-        console.log('Cache failed:', error);
+      .then(() => {
+        return self.skipWaiting();
       })
   );
 });
 
-// Fetch Event - Serve cached content when offline
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Return cached version or fetch from network
-        return response || fetch(event.request);
-      })
-      .catch(() => {
-        // Return offline page for navigation requests
-        if (event.request.destination === 'document') {
-          return caches.match('/');
-        }
-      })
-  );
-});
-
-// Activate Service Worker
+// Activate event
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
           if (cacheName !== CACHE_NAME) {
-            console.log('Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
       );
+    }).then(() => {
+      return self.clients.claim();
     })
   );
 });
 
-// Background Sync for offline functionality
+// Fetch event - serve cached content when offline
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request)
+      .then((response) => {
+        // Return cached version or fetch from network
+        return response || fetch(event.request);
+      }
+    )
+  );
+});
+
+// Background sync for offline functionality (future enhancement)
 self.addEventListener('sync', (event) => {
-  if (event.tag === 'background-sync') {
-    event.waitUntil(
-      console.log('Background sync triggered for G3 Tutor')
-    );
+  if (event.tag === 'sync-csa-data') {
+    event.waitUntil(syncCSAData());
   }
 });
 
-// Push Notifications (for future study reminders)
-self.addEventListener('push', (event) => {
-  const options = {
-    body: event.data ? event.data.text() : 'Time to study your G3 modules!',
-    icon: '/G3Tudor.png',
-    badge: '/G3Tudor.png',
-    vibrate: [100, 50, 100],
-    data: {
-      dateOfArrival: Date.now(),
-      primaryKey: '2'
-    }
-  };
-
-  event.waitUntil(
-    self.registration.showNotification('TSSA G3 Tutor', options)
-  );
-});
-
-// Handle notification clicks
-self.addEventListener('notificationclick', (event) => {
-  console.log('Notification click received.');
-  event.notification.close();
-  event.waitUntil(
-    clients.openWindow('/')
-  );
-});
+async function syncCSAData() {
+  // Future: Sync CSA content for offline access
+  console.log('Background sync for CSA data');
+}

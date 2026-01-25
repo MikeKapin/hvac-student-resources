@@ -1,280 +1,157 @@
-# TSSA Adaptive Exam System - AI-Powered Learning Platform
+# Canadian Gas Technician Tutor
 
-## 🎯 Project Overview
+🇨🇦 **Enhanced AI-powered tutor** for Canadian Gas Technician certification preparation. Supports both G3 and G2 certification levels with comprehensive CSA B149.1-25 & B149.2-25 training integration.
 
-The TSSA Adaptive Exam System is a comprehensive, AI-powered practice examination platform designed for Canadian gas technicians preparing for Technical Standards and Safety Authority (TSSA) G2 and G3 certifications. The system features adaptive learning algorithms, comprehensive question banks extracted from your existing simulators, and detailed progress tracking aligned with CSA B149.1-25 and CSA B149.2 standards.
+## ✨ Enhanced Features
 
-## 📊 System Specifications
+### 🎯 **Certification Paths**
+- **G3 Path**: Units 1-9 → Residential & small commercial (up to 400,000 BTU/hr)
+- **G2 Path**: Units 10-24 → Advanced commercial & industrial (unlimited capacity)
 
-### Question Bank Statistics
-- **G3 (Level 1 - Foundation)**: 313 comprehensive questions
-- **G2 (Level 2 - Advanced)**: 117 specialized questions  
-- **Total Questions**: 430 professional-grade questions
-- **Standards Coverage**: CSA B149.1-25 & CSA B149.2 compliant
-- **Content Sources**: Extracted from existing TSSA simulators
+### 🤖 **Advanced AI Integration**
+- **Anthropic Claude** integration with professional gas technician knowledge
+- **Context-aware responses** based on certification level
+- **CSA code references** extracted and highlighted in real-time
+- **Module-specific guidance** tied to official training units
 
-### Exam Configurations
+### 📚 **CSA Training Integration**
+- **Units 1-9 (G3)**: Safety, Tools, Gas Properties, Codes, Electricity, Manuals, Customer Relations, Piping, Appliances
+- **Units 10-24 (G2)**: Advanced Piping, Regulators, Controls, Commercial Systems, Venting, Air Handling
 
-#### G3 Certification (Entry Level)
-| Exam Type | Questions | Time Limit | Pass Score | Description |
-|-----------|-----------|------------|------------|-------------|
-| Quick Practice | 25 | 30 min | 70% | Quick skill assessment |
-| Standard Practice | 50 | 60 min | 75% | Comprehensive practice |
-| Full Simulation | 160 | 3.5 hours | 75% | Complete exam simulation |
-| Diagnostic | 75 | 90 min | 65% | Knowledge gap analysis |
+### 🎨 **Professional Design**
+- **LARK Labs branding** with educational excellence standards
+- **Mobile-first responsive** design optimized for field use
+- **Canadian identity** with flag and CSA compliance messaging
+- **Accessibility** compliant with ARIA support and screen readers
 
-#### G2 Certification (Advanced Level)
-| Exam Type | Questions | Time Limit | Pass Score | Description |
-|-----------|-----------|------------|------------|-------------|
-| Quick Practice | 20 | 30 min | 70% | Quick skill check |
-| Standard Practice | 40 | 60 min | 75% | Standard practice session |
-| Full Simulation | 117 | 3 hours | 75% | Complete question bank |
-| Diagnostic | 60 | 75 min | 65% | Comprehensive assessment |
+## 🚀 Quick Start
 
-## 🏗️ System Architecture
-
-### Core Components
-
-```
-csa-tutor-app/
-├── src/
-│   ├── components/           # React UI components
-│   │   ├── AdaptiveExamSystem.jsx      # Main exam interface
-│   │   ├── AuthenticationSystem.jsx    # User auth & registration
-│   │   ├── Navigation.jsx              # App navigation
-│   │   ├── Footer.jsx                  # Lark Labs branded footer
-│   │   └── InstallPrompt.jsx           # PWA installation
-│   ├── data/                 # Data management
-│   │   ├── questionBankManager.js      # Question bank logic
-│   │   ├── csaStandardsData.js         # CSA standards mapping
-│   │   ├── g3_questions_extracted.json # G3 question database
-│   │   └── g2_questions_extracted.json # G2 question database
-│   ├── services/             # API services
-│   │   ├── authService.js              # Authentication service
-│   │   └── progressTrackingService.js  # Progress tracking
-│   ├── utils/                # Utility functions
-│   │   ├── adaptiveLearningEngine.js   # AI learning engine
-│   │   ├── learningAlgorithms.js       # Learning algorithms
-│   │   └── pwa.js                      # PWA utilities
-│   ├── database/             # Database schema
-│   │   └── schema.sql                  # PostgreSQL schema
-│   └── App_New.jsx           # Main application component
-├── index_complete.html       # Complete standalone app
-├── manifest.json             # PWA manifest
-└── README.md                 # This documentation
-```
-
-## 🤖 AI-Powered Features
-
-### Adaptive Learning Engine
-- **Intelligent Question Selection**: Dynamically selects questions based on user performance
-- **Difficulty Progression**: Automatically adjusts question difficulty in real-time
-- **Knowledge Gap Identification**: Identifies weak areas and focuses practice accordingly
-- **Spaced Repetition**: Implements SM-2 algorithm for optimal knowledge retention
-- **Performance Prediction**: Predicts exam readiness with 75%+ accuracy
-
-### Learning Algorithms
-- **Performance Analytics**: Comprehensive analysis of user strengths and weaknesses
-- **Study Pattern Recognition**: Identifies optimal study times and methods
-- **Retention Tracking**: Monitors long-term knowledge retention
-- **Personalized Recommendations**: AI-generated study suggestions
-
-## 📚 CSA Standards Integration
-
-### G3 Modules (Foundation Level - 9 Units)
-1. **Unit 1**: Safety (25% exam weight)
-2. **Unit 2**: Fasteners, Tools and Test Equipment (8%)
-3. **Unit 3**: Properties and Safe Handling of Fuel Gases (15%)
-4. **Unit 4**: Gas Industry Codes, Acts and Regulations (20%)
-5. **Unit 4a**: Laws Governing the Gas Industry (8%)
-6. **Unit 5**: Basic Electricity (7%)
-7. **Unit 6**: Technical Drawings, Manuals and Graphs (5%)
-8. **Unit 7**: Customer Relations (4%)
-9. **Unit 8**: Introduction to Piping and Tubing Systems (4%)
-10. **Unit 9**: Introduction to Gas Appliances (4%)
-
-### G2 Modules (Advanced Level - 15 Additional Units)
-1. **Unit 10**: Advanced Piping Systems (12% exam weight)
-2. **Unit 11**: Pressure Regulators (8%)
-3. **Unit 12**: Basic Electricity for Gas Fired Appliances (10%)
-4. **Unit 13**: Controls (12%)
-5. **Unit 14**: The Building as a System (8%)
-6. **Unit 15**: Domestic Appliances (10%)
-7. **Unit 16**: Gas Fired Refrigerators (3%)
-8. **Unit 17**: Conversion Burners (4%)
-9. **Unit 18**: Water Heaters and Combination Systems (8%)
-10. **Unit 19**: Forced Warm Air Appliances (12%)
-11. **Unit 20**: Hydronic Heating Systems (8%)
-12. **Unit 21**: Space Heaters and Fireplaces (6%)
-13. **Unit 22**: Venting Systems (10%)
-14. **Unit 23**: Forced Air Add-Ons (4%)
-15. **Unit 24**: Air Handling (5%)
-
-## 🔐 User Management System
-
-### Authentication Features
-- **Secure Registration**: JWT-based authentication with password validation
-- **Role-Based Access**: Student, Instructor, and Administrator roles
-- **Profile Management**: Detailed user profiles with certification tracking
-- **Password Recovery**: Secure password reset functionality
-- **Session Management**: Automatic token refresh and session handling
-
-### User Roles & Permissions
-- **Students**: Full access to practice exams and progress tracking
-- **Instructors**: Content management and student progress monitoring
-- **Administrators**: Full system access and user management
-
-## 📈 Progress Tracking & Analytics
-
-### Individual Analytics
-- **Performance Metrics**: Detailed scoring and improvement tracking
-- **Competency Analysis**: Module-by-module performance breakdown
-- **Time Management**: Study time tracking and optimization suggestions
-- **Readiness Assessment**: AI-powered exam readiness prediction
-
-### Advanced Features
-- **Learning Velocity**: Questions per hour tracking
-- **Retention Analysis**: Long-term knowledge retention monitoring
-- **Study Pattern Recognition**: Optimal study time identification
-- **Personalized Study Plans**: AI-generated learning paths
-
-## 🔧 Technical Implementation
-
-### Frontend Technologies
-- **React 18**: Modern component-based UI framework
-- **Tailwind CSS**: Utility-first styling framework
-- **Lucide React**: Comprehensive icon library
-- **React Router**: Client-side routing
-
-### Backend Services (API Ready)
-- **Node.js**: Server-side JavaScript runtime
-- **PostgreSQL**: Robust relational database
-- **JWT Authentication**: Secure token-based authentication
-- **RESTful API**: Standard HTTP API design
-
-### Progressive Web App (PWA)
-- **Service Worker**: Offline functionality and caching
-- **App Manifest**: Native app-like experience
-- **Push Notifications**: Study reminders and updates
-- **Install Prompt**: One-click installation
-
-## 🚀 Deployment & Installation
-
-### Prerequisites
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- Internet connection (for initial load and sync)
-- Optional: Node.js for local development
-
-### Quick Start (Standalone)
-1. Open `index_complete.html` in a modern web browser
-2. The application will automatically initialize
-3. Create an account or use as guest
-4. Start taking practice exams immediately
-
-### Full Development Setup
+### **Option 1: Full AI Experience (Recommended)**
 ```bash
-# Clone or download the project
-cd csa-tutor-app
+# 1. Setup with API key for enhanced AI responses
+cp .env.local .env.local.backup
 
-# Install dependencies (if using Node.js)
+# 2. Add your Anthropic API key to .env.local
+NEXT_PUBLIC_ANTHROPIC_API_KEY=your-anthropic-api-key
+
+# 3. Install and run
 npm install
-
-# Start development server
 npm run dev
-
-# Build for production
-npm run build
 ```
 
-## 📱 PWA Installation
+### **Option 2: Offline Mode**
+```bash
+# Works without API key using enhanced fallback responses
+npm install
+npm run dev
+```
 
-### Desktop Installation
-1. Visit the application in Chrome/Edge
-2. Look for the "Install" button in the address bar
-3. Click to install as a desktop application
+📖 **[Complete Setup Guide](SETUP.md)** with API key instructions
 
-### Mobile Installation (iOS/Android)
-1. Open in Safari (iOS) or Chrome (Android)
-2. Tap the "Share" button
-3. Select "Add to Home Screen"
+## 🧪 Test the Enhancement
 
-## 🎯 Key Features Summary
+Visit your running app and test the enhanced functionality:
 
-### ✅ Complete Question Banks
-- 313 G3 questions covering all foundation topics
-- 117 G2 questions for advanced certification
-- Questions extracted from your existing simulators
-- 100% alignment with CSA B149.1 and B149.2 standards
+### **G3 Testing**
+```
+Question: "What are the clearance requirements for residential furnaces?"
+Expected: CSA B149.1-25 references + Units 1-9 guidance
+```
 
-### ✅ Adaptive Learning Technology
-- AI-powered question selection
-- Real-time difficulty adjustment
-- Spaced repetition algorithm
-- Performance prediction and analytics
+### **G2 Testing**
+```
+Question: "How do I size piping for a commercial kitchen?"
+Expected: Both CSA codes + Units 10-24 advanced guidance
+```
 
-### ✅ Comprehensive Exam Simulation
-- Full TSSA exam simulations (3.5 hours, 75% pass requirement)
-- Quick practice sessions (25-30 questions)
-- Diagnostic assessments for gap analysis
-- Timed exams with realistic conditions
+### **API Status Check**
+```
+Visit: http://localhost:3000/api/chat
+Status: Should show "connection_status": "connected" with API key
+```
 
-### ✅ Professional User Experience
-- Modern, responsive design
-- Mobile-optimized interface
-- Dark/light theme support
-- Accessibility compliance (WCAG 2.1)
+## 🔧 Technology Stack
 
-### ✅ Progress Tracking & Analytics
-- Detailed performance dashboards
-- Module-by-module progress tracking
-- Learning velocity analysis
-- Personalized study recommendations
+- **Framework**: Next.js 15 with App Router + Turbopack
+- **AI Provider**: Anthropic Claude (with OpenAI fallback option)
+- **Language**: TypeScript with comprehensive type definitions
+- **Styling**: Tailwind CSS with LARK Labs professional typography
+- **Icons**: Lucide React with gas technician specific iconography
+- **Deployment**: Vercel-ready with optimized configuration
 
-## 🏢 Lark Labs Branding Integration
+## 🎓 Educational Content
 
-The application maintains consistent branding with your existing simulators:
-- **Logo Integration**: Animated Lark Labs logo and branding
-- **Color Scheme**: Matching blue/indigo gradient themes
-- **Footer Branding**: Professional footer with copyright and links
-- **Consistent Styling**: Matches your existing HVAC tools aesthetic
+### **G3 Certification Coverage**
+| Unit | Topic | Focus Area |
+|------|-------|------------|
+| 1 | Safety | Emergency procedures, PPE, hazard recognition |
+| 2 | Tools & Testing | Measurement instruments, leak detection |
+| 3 | Gas Properties | Natural gas characteristics, safe handling |
+| 4 | Codes & Regulations | CSA B149.1-25, TSSA compliance |
+| 5 | Electricity | Basic electrical principles for gas systems |
+| 6 | Technical Manuals | Reading specifications and drawings |
+| 7 | Customer Relations | Professional communication skills |
+| 8 | Piping Systems | Residential piping design and installation |
+| 9 | Gas Appliances | Residential appliance types and connections |
 
-## 📞 Support & Contact
+### **G2 Certification Coverage**
+| Unit | Topic | Advanced Focus |
+|------|-------|----------------|
+| 10-11 | Advanced Piping & Regulators | Complex systems, pressure control |
+| 12-13 | Electrical & Controls | Advanced electrical, safety controls |
+| 14-15 | Building Systems & Appliances | Commercial integration, domestic systems |
+| 16-18 | Specialized Equipment | Refrigeration, burners, water heating |
+| 19-21 | Heating Systems | Forced air, hydronic, space heating |
+| 22-24 | Venting & Air Handling | Advanced venting, air quality systems |
 
-### Developer Information
-- **Company**: Lark Labs Software Development
-- **Location**: Ontario, Canada
-- **Contact**: info@larklabs.ca
-- **Website**: https://larklabs.ca
+## 🛠️ Enhanced vs Original
 
-### Technical Support
-- **Documentation**: Complete API and component documentation
-- **Issue Tracking**: GitHub issues for bug reports and feature requests
-- **Updates**: Regular updates with new features and improvements
+| Feature | Original | Enhanced |
+|---------|----------|----------|
+| AI Responses | Basic random responses | Anthropic Claude with CSA knowledge |
+| Code References | Generic mentions | Real-time CSA section extraction |
+| Module Integration | None | Units 1-24 mapped to certification levels |
+| Fallback Quality | Simple text | Professional gas technician content |
+| API Integration | Simulated only | Full Anthropic + OpenAI support |
+| Educational Depth | Surface level | Professional training integration |
 
-## 📄 License & Copyright
+## 📦 Deployment
 
-**© 2025 Lark Labs Software Development. All Rights Reserved.**
+### **Vercel (One-Click)**
+1. Connect GitHub repository
+2. Add `NEXT_PUBLIC_ANTHROPIC_API_KEY` to environment variables
+3. Deploy automatically
 
-This software and its content are protected by copyright law. The TSSA Adaptive Exam System is designed for educational purposes only and is not affiliated with or endorsed by TSSA (Technical Standards and Safety Authority).
+### **Manual Deployment**
+```bash
+npm run build
+npm start
+# Or deploy .next folder to your hosting provider
+```
 
-### Educational Disclaimer
-This practice exam system uses comprehensive question banks based on CSA B149.1 and B149.2 standards. While designed to prepare students for TSSA certification exams, success on practice tests does not guarantee success on official examinations. Students should supplement their studies with official TSSA materials and approved training programs.
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/enhancement`
+3. Follow CSA standards and educational best practices
+4. Test with both G3 and G2 scenarios
+5. Submit pull request
+
+## 📄 License
+
+MIT License - Built for Canadian Gas Technician education
+
+## 🏢 Professional Partners
+
+- **LARK Labs**: Educational Excellence in HVAC Technology
+- **CSA Group**: Canadian Standards Authority
+- **TSSA**: Technical Standards & Safety Authority
 
 ---
 
-## 🎉 Project Completion Status
+**🎯 Training the next generation of certified Canadian Gas Technicians with AI-enhanced education**
 
-### ✅ Completed Components
-- [x] Complete question bank extraction (430 questions)
-- [x] Adaptive learning engine with AI algorithms
-- [x] Comprehensive exam system with multiple modes
-- [x] User authentication and profile management
-- [x] Progress tracking and analytics
-- [x] Responsive UI with mobile optimization
-- [x] PWA functionality with offline support
-- [x] CSA standards integration and mapping
-- [x] Database schema design
-- [x] Professional branding and styling
+Built with ❤️ by LARK Labs | Powered by Anthropic Claude | 🇨🇦 CSA Compliant
 
-### 🔄 Ready for Integration
-This complete system is ready to be integrated into your existing website as a separate application. All components are self-contained and can be deployed independently without affecting your current simulators.
+---
+*Clean deployment - v2.0.1*
