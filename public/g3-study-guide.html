@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TSSA G3 Study Guide - Mike Kapin</title>
-    <meta name="description" content="Comprehensive TSSA G3 Study Guide with detailed exam preparation strategies, study tips, and complete unit coverage for 2025 by Mike Kapin, HVAC Educator.">
+    <title>How to Pass the TSSA G3 Exam in Ontario - Mike Kapin HVAC Education</title>
+    <meta name="description" content="Comprehensive guide to passing the TSSA G3 Propane Gas Technician exam in Ontario. Study strategies, exam tips, and free resources by Mike Kapin.">
+    <meta name="keywords" content="TSSA G3, propane gas technician, Ontario, exam preparation, CSA B149.2, study guide, Mike Kapin">
     <style>
         * {
             margin: 0;
@@ -15,12 +16,10 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #1F1F1F;
-            min-height: 100vh;
             color: #E8E8E8;
             line-height: 1.6;
         }
 
-        /* Header */
         header {
             background: #2A2A2A;
             padding: 1.5rem 0;
@@ -63,474 +62,677 @@
             color: #CC785C;
         }
 
-        /* Hero Section */
         .hero {
             background: #2A2A2A;
-            color: #E8E8E8;
             padding: 4rem 20px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             border-bottom: 3px solid #CC785C;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             color: #E8E8E8;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
             color: #A0A0A0;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .badge {
-            display: inline-block;
-            background: rgba(204, 120, 92, 0.2);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            margin: 0.5rem;
-            font-weight: bold;
-            color: #CC785C;
-            border: 1px solid #CC785C;
-        }
-
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 3rem 20px;
         }
 
-        /* Coming Soon Section */
-        .coming-soon {
-            background: #2A2A2A;
-            border: 2px solid #CC785C;
-            border-radius: 20px;
-            padding: 4rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .coming-soon h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #E8E8E8;
-        }
-
-        .coming-soon p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            color: #A0A0A0;
-        }
-
-        .coming-soon .highlight {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #CC785C;
-        }
-
-        /* Info Cards */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .info-card {
+        .toc {
             background: #2A2A2A;
             border: 1px solid #3F3F3F;
             border-radius: 15px;
             padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 3rem;
         }
 
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
-            border-color: #CC785C;
+        .toc h2 {
+            color: #CC785C;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
         }
 
-        .info-card h3 {
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #3F3F3F;
+        }
+
+        .toc a {
+            color: #E8E8E8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .toc a:hover {
+            color: #CC785C;
+        }
+
+        .section {
+            background: #2A2A2A;
+            border: 1px solid #3F3F3F;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            color: #CC785C;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3F3F3F;
+        }
+
+        .section h3 {
             color: #E8E8E8;
             font-size: 1.5rem;
+            margin-top: 2rem;
             margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        .info-card h3::before {
-            content: "✓";
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            background: #CC785C;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 30px;
-            font-weight: bold;
+        .section h4 {
+            color: #E8E8E8;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
         }
 
-        .info-card ul {
-            list-style: none;
-            padding-left: 0;
+        .section p {
+            color: #A0A0A0;
+            margin-bottom: 1rem;
         }
 
-        .info-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
+        .section ul, .section ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
             color: #A0A0A0;
         }
 
-        .info-card li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box {
+            background: #1F1F1F;
+            border-left: 4px solid #CC785C;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .info-box h4 {
+            color: #CC785C;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .info-box p {
+            color: #A0A0A0;
+            margin-bottom: 0;
+        }
+
+        .callout {
+            background: rgba(204, 120, 92, 0.1);
+            border: 1px solid #CC785C;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .callout h4 {
+            color: #CC785C;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: #1F1F1F;
+        }
+
+        th {
+            background: #CC785C;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            border: 1px solid #3F3F3F;
+            padding: 1rem;
+            color: #A0A0A0;
+        }
+
+        tr:nth-child(even) {
+            background: #252525;
+        }
+
+        .highlight {
             color: #CC785C;
             font-weight: bold;
-            font-size: 1.5rem;
         }
 
-        /* Features Section */
-        .features {
-            background: #2A2A2A;
-            border: 1px solid #3F3F3F;
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .features h2 {
-            color: #E8E8E8;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .feature-list {
+        .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
         }
 
-        .feature-item {
+        .tool-card {
             background: #1F1F1F;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #CC785C;
-            transition: all 0.3s;
             border: 1px solid #3F3F3F;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
         }
 
-        .feature-item:hover {
-            border-left-width: 8px;
-            transform: translateX(5px);
+        .tool-card:hover {
+            border-color: #CC785C;
+            transform: translateY(-5px);
         }
 
-        .feature-item h4 {
+        .tool-card h4 {
             color: #E8E8E8;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .feature-item p {
-            color: #A0A0A0;
-            font-size: 0.95rem;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: #2A2A2A;
-            border: 2px solid #CC785C;
-            border-radius: 20px;
-            padding: 3rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .cta-section h2 {
-            font-size: 2rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: #E8E8E8;
         }
 
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        .tool-card p {
             color: #A0A0A0;
+            margin-bottom: 1rem;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        .tool-card ul {
+            list-style: none;
+            margin-left: 0;
+            margin-bottom: 1.5rem;
         }
 
-        .cta-button {
+        .tool-card li {
+            color: #A0A0A0;
+            padding: 0.3rem 0;
+        }
+
+        .button {
             display: inline-block;
             background: #CC785C;
             color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(204, 120, 92, 0.4);
+        .button:hover {
             background: #d68969;
+            transform: translateY(-2px);
         }
 
-        .cta-button.secondary {
-            background: transparent;
-            color: #CC785C;
-            border: 2px solid #CC785C;
-        }
-
-        .cta-button.secondary:hover {
-            background: #CC785C;
-            color: white;
-        }
-
-        /* Footer */
-        .footer {
+        footer {
             background: #2A2A2A;
-            padding: 30px 20px;
+            padding: 2rem 0;
             border-top: 3px solid #CC785C;
-            margin-top: 50px;
+            margin-top: 4rem;
             text-align: center;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .mike-kapin-branding {
-            margin-bottom: 20px;
-        }
-
-        .copyright p {
+        footer p {
             color: #A0A0A0;
-            font-size: 0.9em;
-            line-height: 1.6;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .coming-soon {
-                padding: 2rem;
-            }
-
-            .coming-soon h2 {
                 font-size: 1.8rem;
             }
 
-            .coming-soon p {
-                font-size: 1.1rem;
+            .section {
+                padding: 1.5rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
             }
 
             nav a {
                 margin-left: 1rem;
                 font-size: 0.9rem;
             }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .cta-button {
-                width: 100%;
-            }
-
-            .footer {
-                padding: 20px 15px;
-            }
         }
-
-        /* Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .info-card,
-        .feature-item {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .info-card:nth-child(1) { animation-delay: 0.1s; }
-        .info-card:nth-child(2) { animation-delay: 0.2s; }
-        .info-card:nth-child(3) { animation-delay: 0.3s; }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-content">
-            <a href="index.html" class="logo">Mike <span>Kapin</span></a>
+            <a href="/" class="logo">Mike <span>Kapin</span></a>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="g2-exam-simulator.html">G2 Exam Simulator</a>
-                <a href="g3-exam-simulator.html">G3 Exam Simulator</a>
+                <a href="/">Home</a>
+                <a href="/g3">G3 Resources</a>
+                <a href="/g2">G2 Resources</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>TSSA G3 Study Guide</h1>
-        <p>Your comprehensive guide to G3 certification success</p>
-        <p style="font-size: 0.9rem; opacity: 0.9; margin-top: 1rem;">Published: August 15, 2024 | Mike Kapin, HVAC Educator</p>
-        <div>
-            <span class="badge">CSA Compliant</span>
-            <span class="badge">2025 Updated</span>
-            <span class="badge">Complete Coverage</span>
-        </div>
-    </section>
+    <div class="hero">
+        <h1>How to Pass the TSSA G3 Exam in Ontario</h1>
+        <p>Proven strategies and comprehensive guidance for Canadian Propane Gas Technicians</p>
+        <p style="font-size: 0.9rem; margin-top: 1rem;">By Mike Kapin, HVAC Educator | Updated January 2026</p>
+    </div>
 
-    <!-- Main Content -->
     <div class="container">
-        <!-- Coming Soon Announcement -->
-        <div class="coming-soon">
-            <h2>Coming Soon</h2>
-            <p class="highlight">2025 CSA Compliant Resources Modules for G3</p>
-            <p>Comprehensive, CSA-compliant resources modules designed specifically for TSSA G3 certification. These modules will feature interactive learning, real-world scenarios, and exam-focused preparation strategies.</p>
-            <p>Expected Launch: <strong>January 2026</strong></p>
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">1. Introduction</a></li>
+                <li><a href="#license-overview">2. G3 License Overview</a></li>
+                <li><a href="#exam-format">3. Exam Format and Structure</a></li>
+                <li><a href="#study-resources">4. Essential Study Resources</a></li>
+                <li><a href="#study-strategies">5. Effective Study Strategies</a></li>
+                <li><a href="#exam-day">6. Exam Day Tips</a></li>
+                <li><a href="#common-mistakes">7. Common Mistakes to Avoid</a></li>
+                <li><a href="#post-exam">8. After the Exam</a></li>
+                <li><a href="#faq">9. Frequently Asked Questions</a></li>
+                <li><a href="#conclusion">10. Conclusion</a></li>
+            </ul>
         </div>
 
-        <!-- What to Expect -->
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>Complete Unit Coverage</h3>
-                <ul>
-                    <li>CSA B149.1 Natural Gas Code</li>
-                    <li>CSA B149.2 Propane Code</li>
-                    <li>Gas Appliance Fundamentals</li>
-                    <li>Piping Systems & Installation</li>
-                    <li>Safety Standards & Regulations</li>
-                    <li>Technical Drawing Interpretation</li>
-                    <li>Combustion Analysis</li>
-                    <li>Ventilation Requirements</li>
-                </ul>
-            </div>
+        <div class="section" id="introduction">
+            <h2>1. Introduction</h2>
+            <p>The TSSA G3 Propane Gas Technician certification is your entry point into the propane gas industry in Ontario. This license qualifies you to work on domestic propane appliances up to 45,000 BTU/hr input, including common household equipment like stoves, water heaters, and fireplaces.</p>
 
-            <div class="info-card">
-                <h3>Study Strategies</h3>
-                <ul>
-                    <li>Personalized learning paths</li>
-                    <li>Interactive practice questions</li>
-                    <li>Video tutorials and demonstrations</li>
-                    <li>Code reference guides</li>
-                    <li>Exam simulation practice</li>
-                    <li>Progress tracking dashboard</li>
-                    <li>Mobile-friendly access</li>
-                    <li>Expert instructor support</li>
-                </ul>
-            </div>
+            <p>Passing the G3 exam requires thorough preparation, understanding of the CSA B149.2 Propane Installation Code, and practical knowledge of propane systems. This guide provides you with proven strategies to prepare effectively and pass your exam with confidence.</p>
 
-            <div class="info-card">
-                <h3>Exam Preparation</h3>
-                <ul>
-                    <li>1000+ practice questions</li>
-                    <li>Detailed answer explanations</li>
-                    <li>Timed practice exams</li>
-                    <li>Performance analytics</li>
-                    <li>Weak area identification</li>
-                    <li>Study schedule planner</li>
-                    <li>Quick reference materials</li>
-                    <li>Last-minute review guides</li>
-                </ul>
+            <div class="info-box">
+                <h4>Who This Guide Is For</h4>
+                <p>This guide is designed for aspiring propane gas technicians preparing for the TSSA G3 certification exam. Whether you're just starting your journey or looking to enhance your preparation, you'll find valuable insights and resources here.</p>
             </div>
         </div>
 
-        <!-- Features Section -->
-        <div class="features">
-            <h2>What Makes This Resource Different</h2>
-            <div class="feature-list">
-                <div class="feature-item">
-                    <h4>CSA 2025 Compliant</h4>
-                    <p>Fully updated to reflect the latest CSA B149.1 and B149.2 code changes for 2025</p>
+        <div class="section" id="license-overview">
+            <h2>2. G3 License Overview</h2>
+
+            <h3>What is a G3 License?</h3>
+            <p>The G3 license is issued by the Technical Standards and Safety Authority (TSSA) and allows technicians to install, alter, maintain, and service domestic propane gas appliances with an input rating not exceeding 45,000 BTU/hr.</p>
+
+            <h3>Scope of Work</h3>
+            <p>With a G3 license, you can work on:</p>
+            <ul>
+                <li>Domestic propane ranges and ovens</li>
+                <li>Propane water heaters (up to 45,000 BTU/hr)</li>
+                <li>Propane fireplaces and space heaters</li>
+                <li>Propane dryers</li>
+                <li>Small propane appliances in residential settings</li>
+            </ul>
+
+            <h3>Career Path</h3>
+            <p>The G3 license is typically the first step in a propane gas technician career. After gaining two years of experience with a G3 license, you can advance to the G2 certification, which covers natural gas systems and larger appliances.</p>
+
+            <div class="callout">
+                <h4>Career Progression</h4>
+                <p>G3 (Propane, domestic, ≤45,000 BTU/hr) → G2 (Natural Gas & Propane, ≤400,000 BTU/hr) → G1 (Unlimited)</p>
+            </div>
+        </div>
+
+        <div class="section" id="exam-format">
+            <h2>3. Exam Format and Structure</h2>
+
+            <h3>Exam Specifications</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Number of Questions</td>
+                        <td>80-100 multiple choice questions</td>
+                    </tr>
+                    <tr>
+                        <td>Time Limit</td>
+                        <td>2.5 hours</td>
+                    </tr>
+                    <tr>
+                        <td>Passing Score</td>
+                        <td>75% (approximately 60-75 correct answers)</td>
+                    </tr>
+                    <tr>
+                        <td>Format</td>
+                        <td>Computer-based test at approved TSSA testing centers</td>
+                    </tr>
+                    <tr>
+                        <td>Reference Materials</td>
+                        <td>CSA B149.2 Propane Code provided during exam</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Key Topic Areas</h3>
+            <p>The exam covers the following main areas:</p>
+            <ul>
+                <li><span class="highlight">CSA B149.2 Propane Installation Code</span> (40-50% of exam)</li>
+                <li><span class="highlight">Propane Appliance Fundamentals</span> (15-20%)</li>
+                <li><span class="highlight">Piping and Installation</span> (15-20%)</li>
+                <li><span class="highlight">Safety Standards and Regulations</span> (10-15%)</li>
+                <li><span class="highlight">Combustion Principles</span> (10-15%)</li>
+                <li><span class="highlight">Ventilation Requirements</span> (5-10%)</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Time Management</h4>
+                <p>With 2.5 hours for 80-100 questions, you have approximately 1.5-2 minutes per question. Practice working at this pace during your study sessions.</p>
+            </div>
+        </div>
+
+        <div class="section" id="study-resources">
+            <h2>4. Essential Study Resources</h2>
+
+            <h3>Primary Resources</h3>
+            <p>The most important study materials for the G3 exam include:</p>
+
+            <h4>CSA B149.2 Propane Installation Code</h4>
+            <p>This is the <span class="highlight">single most important resource</span> for your exam. The B149.2 code covers all aspects of propane installation, from appliance selection to piping requirements. You must become thoroughly familiar with this document.</p>
+
+            <h4>TSSA Regulations</h4>
+            <p>Understanding the Technical Standards and Safety Act and Ontario Regulations is crucial. These documents outline the legal requirements and authority under which you'll operate.</p>
+
+            <h3>Free Online Tools</h3>
+            <p>Take advantage of these free resources to enhance your preparation:</p>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h4>🧭 CSA Code Search Tool</h4>
+                    <p>Fast, powerful search for CSA B149.1-25 (Natural Gas), B149.2-25 (Propane), and regulatory requirements with AI-powered explanations.</p>
+                    <ul>
+                        <li>✓ Complete CSA B149.1-25 and B149.2-25 codes</li>
+                        <li>✓ Full TSSA Act and Ontario Regulations</li>
+                        <li>✓ AI explanations for complex code sections</li>
+                        <li>✓ Mobile-optimized for field use</li>
+                        <li>✓ Always free with no restrictions</li>
+                    </ul>
+                    <a href="/csa-code-search/" target="_blank" class="button">Launch CSA Code Search</a>
                 </div>
-                <div class="feature-item">
-                    <h4>TSSA Aligned</h4>
-                    <p>Content specifically designed to match TSSA G3 examination objectives and format</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Interactive Learning</h4>
-                    <p>Engage with dynamic content, quizzes, and hands-on exercises throughout each module</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Real-World Scenarios</h4>
-                    <p>Learn through practical case studies and field-tested examples from experienced professionals</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Mobile Accessible</h4>
-                    <p>Study anywhere, anytime with full mobile and tablet optimization</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Progress Tracking</h4>
-                    <p>Monitor your learning journey with detailed analytics and performance insights</p>
+
+                <div class="tool-card">
+                    <h4>📝 G3 Practice Exam Simulator</h4>
+                    <p>Comprehensive practice exam with 300+ TSSA-style questions covering all G3 topics with detailed explanations.</p>
+                    <ul>
+                        <li>✓ 300+ practice questions</li>
+                        <li>✓ Realistic exam simulation</li>
+                        <li>✓ Instant feedback and explanations</li>
+                        <li>✓ Track your progress over time</li>
+                        <li>✓ Completely free - no paywalls</li>
+                    </ul>
+                    <a href="/g3-exam-simulator.html" target="_blank" class="button">Start Practice Exam</a>
                 </div>
             </div>
         </div>
 
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <h2>Ready to Start Your G3 Journey?</h2>
-            <p>Start practicing with the free G3 Exam Simulator</p>
-            <div class="cta-buttons">
-                <a href="g3-exam-simulator.html" class="cta-button">Start G3 Practice Exam</a>
-                <a href="g2-exam-simulator.html" class="cta-button secondary">G2 Practice Exam</a>
+        <div class="section" id="study-strategies">
+            <h2>5. Effective Study Strategies</h2>
+
+            <h3>Create a Study Schedule</h3>
+            <p>Dedicate 6-8 weeks of focused study time before your exam. Consistency is more important than marathon study sessions.</p>
+
+            <div class="callout">
+                <h4>Recommended Study Timeline</h4>
+                <p><strong>Weeks 1-2:</strong> Read through CSA B149.2 completely, familiarizing yourself with structure and terminology</p>
+                <p><strong>Weeks 3-4:</strong> Focus on key sections, take detailed notes, and start practice questions</p>
+                <p><strong>Weeks 5-6:</strong> Intensive practice exams, identify weak areas, and review challenging topics</p>
+                <p><strong>Week 7-8:</strong> Final review, simulate exam conditions, and review critical code sections</p>
+            </div>
+
+            <h3>Master the CSA B149.2 Code</h3>
+            <p>The propane code is your most important resource. Here's how to study it effectively:</p>
+            <ul>
+                <li><span class="highlight">Read it cover to cover</span> - Don't skip sections that seem unimportant</li>
+                <li><span class="highlight">Understand the structure</span> - Know how to quickly locate information during the exam</li>
+                <li><span class="highlight">Focus on Tables and Figures</span> - Many questions reference specific charts and diagrams</li>
+                <li><span class="highlight">Highlight key requirements</span> - Mark critical measurements, clearances, and specifications</li>
+                <li><span class="highlight">Practice code lookups</span> - Time yourself finding specific code sections</li>
+            </ul>
+
+            <h3>Active Learning Techniques</h3>
+            <p>Engage with the material actively rather than passively reading:</p>
+            <ol>
+                <li><strong>Practice Questions:</strong> Complete hundreds of practice questions to reinforce your knowledge</li>
+                <li><strong>Create Flashcards:</strong> Make cards for key terms, definitions, and code requirements</li>
+                <li><strong>Teach Someone Else:</strong> Explaining concepts to others reinforces your understanding</li>
+                <li><strong>Hands-on Practice:</strong> If possible, observe or assist with real propane installations</li>
+                <li><strong>Join Study Groups:</strong> Connect with other G3 candidates to share insights and quiz each other</li>
+            </ol>
+
+            <h3>Focus Areas</h3>
+            <p>Pay special attention to these high-yield topics:</p>
+            <ul>
+                <li>Appliance clearances and spacing requirements</li>
+                <li>Piping materials, sizing, and installation methods</li>
+                <li>Ventilation requirements for propane appliances</li>
+                <li>Combustion air requirements</li>
+                <li>Gas pressure testing procedures</li>
+                <li>Leak detection and safety procedures</li>
+                <li>Propane storage and handling regulations</li>
+                <li>Connection types and flexible connectors</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>The 80/20 Rule</h4>
+                <p>Approximately 80% of exam questions come from 20% of the material. Focus your study time on the core topics that appear most frequently in practice exams.</p>
+            </div>
+        </div>
+
+        <div class="section" id="exam-day">
+            <h2>6. Exam Day Tips</h2>
+
+            <h3>Before the Exam</h3>
+            <ul>
+                <li><span class="highlight">Arrive Early:</span> Plan to arrive at least 30 minutes before your scheduled time</li>
+                <li><span class="highlight">Bring Required ID:</span> Government-issued photo ID is mandatory</li>
+                <li><span class="highlight">Get Good Rest:</span> A well-rested mind performs significantly better</li>
+                <li><span class="highlight">Eat Properly:</span> Have a nutritious meal before the exam to maintain energy</li>
+                <li><span class="highlight">Review Basics:</span> Quickly review key formulas and tables the morning of the exam</li>
+            </ul>
+
+            <h3>During the Exam</h3>
+            <ol>
+                <li><strong>Read Questions Carefully:</strong> Don't rush - many wrong answers come from misreading questions</li>
+                <li><strong>Use the Code Book Efficiently:</strong> Know how to navigate the B149.2 code quickly</li>
+                <li><strong>Flag Difficult Questions:</strong> Mark questions you're unsure about and return to them later</li>
+                <li><strong>Manage Your Time:</strong> Keep track of time and don't spend too long on any single question</li>
+                <li><strong>Eliminate Wrong Answers:</strong> If you're unsure, eliminate obviously incorrect options first</li>
+                <li><strong>Check Your Work:</strong> If time permits, review your answers before submitting</li>
+            </ol>
+
+            <h3>Code Book Navigation Tips</h3>
+            <p>The CSA B149.2 code will be provided during the exam. Master these navigation skills:</p>
+            <ul>
+                <li>Use the Table of Contents to quickly locate major sections</li>
+                <li>Familiarize yourself with the index for specific terms</li>
+                <li>Know where key tables are located (pipe sizing, clearances, etc.)</li>
+                <li>Understand the numbering system to find subsections quickly</li>
+                <li>Practice looking up specific requirements in under 30 seconds</li>
+            </ul>
+
+            <div class="callout">
+                <h4>Test-Taking Strategy</h4>
+                <p>Make two passes through the exam: First, answer all questions you're confident about. Second, tackle the more challenging questions with the remaining time. This ensures you capture all the "easy" points.</p>
+            </div>
+        </div>
+
+        <div class="section" id="common-mistakes">
+            <h2>7. Common Mistakes to Avoid</h2>
+
+            <h3>Study Phase Mistakes</h3>
+            <ul>
+                <li><span class="highlight">Cramming Last Minute:</span> Start studying early and spread your learning over weeks</li>
+                <li><span class="highlight">Ignoring Practice Exams:</span> Practice questions are crucial for identifying weak areas</li>
+                <li><span class="highlight">Only Reading the Code:</span> You must actively engage with the material through practice</li>
+                <li><span class="highlight">Skipping "Easy" Sections:</span> Every section of the code can appear on the exam</li>
+                <li><span class="highlight">Not Timing Practice Sessions:</span> Practice under real exam time constraints</li>
+            </ul>
+
+            <h3>Exam Day Mistakes</h3>
+            <ul>
+                <li><span class="highlight">Rushing Through Questions:</span> Take time to read each question fully</li>
+                <li><span class="highlight">Second-Guessing Correct Answers:</span> Your first instinct is often right</li>
+                <li><span class="highlight">Leaving Questions Blank:</span> Always make your best guess - there's no penalty for wrong answers</li>
+                <li><span class="highlight">Poor Time Management:</span> Don't spend 10 minutes on one difficult question</li>
+                <li><span class="highlight">Not Using the Code Book:</span> When in doubt, look it up in the provided B149.2 code</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Learn from Others' Experiences</h4>
+                <p>Many candidates report that they knew the material but lost points due to test anxiety or poor time management. Practice exam simulations help you build confidence and pacing skills.</p>
+            </div>
+        </div>
+
+        <div class="section" id="post-exam">
+            <h2>8. After the Exam</h2>
+
+            <h3>Immediate Results</h3>
+            <p>You'll typically receive your exam results immediately after completing the computer-based test. If you pass, congratulations! If not, don't be discouraged - many successful technicians needed multiple attempts.</p>
+
+            <h3>If You Pass</h3>
+            <ol>
+                <li><strong>Apply for Your License:</strong> Complete the TSSA license application process</li>
+                <li><strong>Find Employment:</strong> Start gaining practical experience with your G3 license</li>
+                <li><strong>Continue Learning:</strong> Stay updated with code changes and best practices</li>
+                <li><strong>Plan for G2:</strong> After 2 years, consider advancing to G2 certification for natural gas systems</li>
+            </ol>
+
+            <h3>If You Don't Pass</h3>
+            <p>Don't give up! Many successful technicians required multiple exam attempts. Here's what to do:</p>
+            <ul>
+                <li><span class="highlight">Review Your Results:</span> Identify which sections you struggled with</li>
+                <li><span class="highlight">Wait Period:</span> There's typically a mandatory waiting period before retaking</li>
+                <li><span class="highlight">Targeted Study:</span> Focus your restudy efforts on weak areas</li>
+                <li><span class="highlight">More Practice Questions:</span> Complete additional practice exams in problem areas</li>
+                <li><span class="highlight">Consider Training:</span> Look into formal training courses if self-study isn't working</li>
+            </ul>
+
+            <h3>Advancing Your Career</h3>
+            <p>The G3 license is just the beginning. Here's how to continue growing:</p>
+            <ul>
+                <li>Gain hands-on experience with various propane systems and appliances</li>
+                <li>Learn from experienced technicians and mentors</li>
+                <li>Stay current with CSA code updates and industry changes</li>
+                <li>Plan to obtain your G2 license after meeting the experience requirements</li>
+                <li>Consider specializations like commercial propane systems or training roles</li>
+            </ul>
+
+            <div class="callout">
+                <h4>Career Pathway</h4>
+                <p>The typical career progression is G3 → G2 (after 2 years) → G1 (after additional experience). Each level significantly expands your career opportunities and earning potential.</p>
+            </div>
+        </div>
+
+        <div class="section" id="faq">
+            <h2>9. Frequently Asked Questions</h2>
+
+            <h3>Q: How long should I study for the G3 exam?</h3>
+            <p>A: Most candidates need 6-8 weeks of consistent study (10-15 hours per week) to adequately prepare. Adjust based on your background knowledge and learning pace.</p>
+
+            <h3>Q: Is the G3 exam harder than G2?</h3>
+            <p>A: The G3 exam is generally considered less comprehensive than G2 since it covers a narrower scope (propane only, smaller appliances). However, it still requires thorough preparation and solid knowledge of CSA B149.2.</p>
+
+            <h3>Q: Can I use the code book during the exam?</h3>
+            <p>A: Yes! The CSA B149.2 Propane Installation Code is provided during the exam. However, you must know how to navigate it quickly - don't rely on looking up every answer.</p>
+
+            <h3>Q: What's the pass rate for the G3 exam?</h3>
+            <p>A: TSSA doesn't publish official pass rates, but most training programs report rates between 60-80%. Proper preparation significantly improves your chances.</p>
+
+            <h3>Q: Do I need practical experience before taking the exam?</h3>
+            <p>A: No practical experience is required to write the G3 exam. However, hands-on experience greatly helps with understanding the concepts and will be necessary after you get your license.</p>
+
+            <h3>Q: How much does the G3 exam cost?</h3>
+            <p>A: As of 2026, the G3 exam fee is approximately $200-$250. Check the TSSA website for current pricing.</p>
+
+            <h3>Q: What if I fail the exam?</h3>
+            <p>A: You can retake the exam after a waiting period (typically 30 days). Use this time to review weak areas and complete more practice questions. Many successful technicians needed multiple attempts.</p>
+
+            <h3>Q: How long is the G3 license valid?</h3>
+            <p>A: G3 licenses must be renewed every 5 years. You'll need to demonstrate continued competency and pay renewal fees.</p>
+
+            <h3>Q: Can I work independently with just a G3 license?</h3>
+            <p>A: Yes, but only within the scope of the G3 license (domestic propane appliances ≤45,000 BTU/hr). You may also need business licenses depending on your location.</p>
+
+            <h3>Q: What's the difference between B149.1 and B149.2?</h3>
+            <p>A: B149.1 covers natural gas installations, while B149.2 covers propane (LPG) installations. The G3 exam focuses primarily on B149.2, though understanding both is valuable for your career.</p>
+        </div>
+
+        <div class="section" id="conclusion">
+            <h2>10. Conclusion</h2>
+
+            <p>Passing the TSSA G3 Propane Gas Technician exam is an achievable goal with proper preparation and the right resources. By following the strategies outlined in this guide, dedicating sufficient study time, and utilizing the free tools available to you, you'll significantly increase your chances of success.</p>
+
+            <p>Remember these key takeaways:</p>
+            <ul>
+                <li><span class="highlight">Master the CSA B149.2 Code:</span> This is your primary resource</li>
+                <li><span class="highlight">Practice Extensively:</span> Complete hundreds of practice questions</li>
+                <li><span class="highlight">Study Consistently:</span> 6-8 weeks of regular study is more effective than cramming</li>
+                <li><span class="highlight">Use All Available Resources:</span> Take advantage of free tools like the CSA Code Search and practice simulators</li>
+                <li><span class="highlight">Simulate Exam Conditions:</span> Practice under timed conditions to build confidence</li>
+            </ul>
+
+            <p>The G3 license opens the door to a rewarding career in the propane gas industry. Whether you're just starting or looking to expand your existing HVAC skills, this certification provides valuable opportunities for professional growth.</p>
+
+            <div class="callout">
+                <h4>Start Your Preparation Today</h4>
+                <p>Don't wait to begin your study journey. Use the free resources available, create your study schedule, and commit to your success. Thousands of technicians have successfully passed this exam - you can too!</p>
+            </div>
+
+            <div class="tools-grid" style="margin-top: 2rem;">
+                <div class="tool-card">
+                    <h4>🧭 Launch CSA Code Search</h4>
+                    <p>Start familiarizing yourself with the CSA codes and regulations right now.</p>
+                    <a href="/csa-code-search/" target="_blank" class="button">Open Code Search</a>
+                </div>
+
+                <div class="tool-card">
+                    <h4>📝 Start Practice Exams</h4>
+                    <p>Begin testing your knowledge with our free G3 practice exam simulator.</p>
+                    <a href="/g3-exam-simulator.html" target="_blank" class="button">Start Practicing</a>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: #1F1F1F; border-radius: 10px; border: 1px solid #3F3F3F;">
+                <h3 style="color: #CC785C; margin-bottom: 1rem;">Good Luck on Your Exam!</h3>
+                <p style="color: #A0A0A0;">I believe in your ability to succeed. With dedication, proper preparation, and the right resources, you'll achieve your G3 certification and begin an exciting career in the propane gas industry.</p>
+                <p style="color: #A0A0A0; margin-bottom: 0;">- Mike Kapin, HVAC Educator</p>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="mike-kapin-branding">
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="margin-bottom: 20px;">
                 <p style="color: #A0A0A0; margin-bottom: 8px;">Created by</p>
                 <h3 style="color: #CC785C; font-size: 1.8em; margin-bottom: 4px;">Mike Kapin</h3>
                 <p style="color: #A0A0A0; font-size: 1.1em;">HVAC Educator</p>
             </div>
-            <div class="copyright">
+            <div>
                 <p style="color: #A0A0A0; font-size: 0.9em; line-height: 1.6;">
                     Free educational resources | Not affiliated with Fanshawe College or any business entity<br>
-                    The TSSA G3 Study Guide is designed for educational purposes only and is not affiliated with or endorsed by TSSA (Technical Standards and Safety Authority).
+                    This guide is for educational purposes and is not affiliated with or endorsed by TSSA (Technical Standards and Safety Authority).
                 </p>
             </div>
         </div>
