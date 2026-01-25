@@ -9,7 +9,6 @@ export default function TSSAResources() {
     ],
     certification: [
       { title: 'Gas Technician Certification', url: 'https://www.tssa.org/fuels-industry-professional', description: 'Gas technician certification requirements and information' },
-      { title: 'TSSA Client Portal', url: 'https://clientportal.tssa.org/', description: 'Register for exams and access certification services' },
       { title: 'Accredited Training Programs', url: 'https://www.tssa.org/accredited-training', description: 'Find accredited training programs and requirements' },
     ],
   };
