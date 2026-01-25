@@ -5,18 +5,18 @@ export default function CSAResources() {
       { title: 'CSA Standards Store', url: 'https://www.csagroup.org/store/', description: 'Purchase official CSA standards and codes' },
     ],
     standards: [
-      { title: 'CSA B149.1 - Natural Gas Code', url: 'https://www.csagroup.org/article/b149-1-20/', description: 'Natural gas and propane installation code' },
-      { title: 'CSA B149.2 - Propane Storage', url: 'https://www.csagroup.org/article/b149-2-20/', description: 'Propane storage and handling code' },
+      { title: 'CSA B149.1:25 - Natural Gas Code', url: 'https://www.csagroup.org/store/natural-gas-and-propane-installation-code/', description: 'Natural gas and propane installation code (2025 Edition)' },
+      { title: 'CSA B149.2:25 - Propane Storage', url: 'https://www.csagroup.org/store/product/CSA_B149.2:25/', description: 'Propane storage and handling code (2025 Edition)' },
     ],
     updates: [
-      { title: 'CSA Code Changes & Updates', url: 'https://www.csagroup.org/standards/', description: 'Latest updates to CSA codes and standards' },
-      { title: 'CSA Technical Bulletins', url: 'https://www.csagroup.org/article/research-resources/', description: 'Technical bulletins and interpretations' },
+      { title: 'CSA Standards Updates', url: 'https://www.csagroup.org/standards/', description: 'Browse all CSA standards and latest updates' },
+      { title: 'CSA Research & Resources', url: 'https://www.csagroup.org/article/research-resources/', description: 'Technical research, bulletins, and resources' },
     ],
     community: [
-      { title: 'CSA Communities', url: 'https://community.csagroup.org/', description: 'Discussion forums and community support' },
+      { title: 'CSA Communities', url: 'https://community.csagroup.org/', description: 'Discussion forums and community support for gas professionals' },
     ],
     training: [
-      { title: 'CSA Training & Certification', url: 'https://www.csagroup.org/testing-certification/', description: 'CSA training programs and certification information' },
+      { title: 'CSA Testing & Certification', url: 'https://www.csagroup.org/testing-certification/', description: 'CSA testing, training, and certification programs' },
     ],
   };
 

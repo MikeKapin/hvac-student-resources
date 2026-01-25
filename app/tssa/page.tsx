@@ -2,25 +2,25 @@ export default function TSSAResources() {
   const resources = {
     official: [
       { title: 'TSSA Official Website', url: 'https://www.tssa.org/', description: 'Technical Standards and Safety Authority main site' },
-      { title: 'TSSA Fuels Safety Program', url: 'https://www.tssa.org/en/fuels/index.aspx', description: 'Fuels safety program information and resources' },
+      { title: 'TSSA Fuels Dashboard', url: 'https://www.tssa.org/fuels-dashboard', description: 'Main hub for fuels safety program information and resources' },
     ],
     regulations: [
-      { title: "TSSA Director's Orders", url: 'https://www.tssa.org/en/fuels/resources/directors-orders.aspx', description: 'Official director orders and compliance requirements' },
-      { title: 'TSSA Code Adoption Documents', url: 'https://www.tssa.org/en/fuels/resources/code-adoption-documents.aspx', description: 'Code adoption and implementation documents' },
+      { title: 'TSSA Regulatory Updates', url: 'https://www.tssa.org/taxonomy/term/31', description: 'Safety bulletins, advisory notices, and regulatory updates' },
+      { title: 'TSSA Code Adoption Documents', url: 'https://www.tssa.org/cad-amendment-gaseous-fuels-code', description: 'Code adoption and implementation documents (CAD)' },
     ],
     safety: [
-      { title: 'TSSA Safety Bulletins', url: 'https://www.tssa.org/en/fuels/resources/safety-bulletins.aspx', description: 'Important safety bulletins and notices' },
-      { title: 'TSSA Advisory Notices', url: 'https://www.tssa.org/en/fuels/resources/advisory-notices.aspx', description: 'Advisory notices and alerts' },
-      { title: 'TSSA Incident Reporting', url: 'https://www.tssa.org/en/fuels/report-an-incident.aspx', description: 'How to report safety incidents' },
+      { title: 'TSSA Incident Hotline', url: 'tel:1-877-682-8772', description: 'Report safety incidents: 1-877-682-8772 (Press 1)' },
+      { title: 'Incident Reporting Criteria', url: 'https://www.tssa.org/sites/default/files/2024-04/FS-Incident-Report-Criteria-for-Hydrocarbon-Fuels-Industry-Advisory-Apr-29-2024.pdf', description: 'Incident reporting criteria for fuels industry' },
     ],
     certification: [
-      { title: 'Gas Technician Certification', url: 'https://www.tssa.org/en/fuels/gas-technicians/index.aspx', description: 'Gas technician certification requirements and process' },
-      { title: 'TSSA Training Requirements', url: 'https://www.tssa.org/en/fuels/gas-technicians/training-requirements.aspx', description: 'Training and continuing education requirements' },
+      { title: 'Gas Technician Certification', url: 'https://www.tssa.org/fuels-industry-professional', description: 'Gas technician certification requirements and information' },
+      { title: 'Exam Registration', url: 'https://www.tssa.org/register-exam', description: 'Register for gas technician certification exams' },
+      { title: 'Accredited Training Programs', url: 'https://www.tssa.org/accredited-training', description: 'Find accredited training programs and requirements' },
     ],
     resources: [
-      { title: 'TSSA Forms & Applications', url: 'https://www.tssa.org/en/fuels/Forms-and-Publications/index.aspx', description: 'Download forms and applications' },
-      { title: 'TSSA FAQs', url: 'https://www.tssa.org/en/fuels/faqs.aspx', description: 'Frequently asked questions' },
-      { title: 'TSSA Contact Information', url: 'https://www.tssa.org/en/about-tssa/contact-us.aspx', description: 'Contact TSSA for support' },
+      { title: 'Fuels FAQs', url: 'https://www.tssa.org/fuels-faqs', description: 'Frequently asked questions about fuels safety' },
+      { title: 'Storage Tanks FAQs', url: 'https://www.tssa.org/faqs-storage-tanks', description: 'Storage tank requirements and questions' },
+      { title: 'TSSA Contact Information', url: 'https://www.tssa.org/contact-us', description: 'Contact TSSA for support and inquiries' },
     ],
   };
 
