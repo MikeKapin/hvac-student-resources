@@ -11,10 +11,14 @@ exports.handler = async (event, context) => {
   }
 
   try {
+    // Log request for debugging
+    console.log('AI interpreter function called');
+
     const { codeText, question, mode, context: codeContext } = JSON.parse(event.body);
 
     // Validate required fields
     if (!codeText) {
+      console.error('Missing codeText in request');
       return {
         statusCode: 400,
         body: JSON.stringify({ error: 'Missing required field: codeText' })
@@ -23,21 +27,25 @@ exports.handler = async (event, context) => {
 
     // Get API key from environment variable
     const apiKey = process.env.ANTHROPIC_API_KEY;
+    console.log('API key present:', apiKey ? 'YES' : 'NO');
+
     if (!apiKey) {
       console.error('ANTHROPIC_API_KEY environment variable not set');
       return {
         statusCode: 500,
         body: JSON.stringify({
           success: false,
-          error: 'AI service not configured. Please contact the administrator.'
+          error: 'AI service not configured. Please add ANTHROPIC_API_KEY to Netlify environment variables and redeploy.'
         })
       };
     }
 
     // Build the prompt based on mode
     const prompt = buildPrompt(codeText, mode, question, codeContext);
+    console.log('Prompt built, mode:', mode);
 
     // Call Anthropic API
+    console.log('Calling Anthropic API...');
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
@@ -55,19 +63,22 @@ exports.handler = async (event, context) => {
       })
     });
 
+    console.log('Anthropic API response status:', response.status);
+
     if (!response.ok) {
       const errorData = await response.text();
-      console.error('Anthropic API error:', errorData);
+      console.error('Anthropic API error response:', errorData);
       return {
         statusCode: 500,
         body: JSON.stringify({
           success: false,
-          error: 'AI interpretation service temporarily unavailable'
+          error: 'AI interpretation service error. Check function logs for details.'
         })
       };
     }
 
     const data = await response.json();
+    console.log('Successfully received AI response');
     const explanation = data.content[0].text;
 
     // Format response
@@ -89,11 +100,12 @@ exports.handler = async (event, context) => {
 
   } catch (error) {
     console.error('AI interpreter error:', error);
+    console.error('Error stack:', error.stack);
     return {
       statusCode: 500,
       body: JSON.stringify({
         success: false,
-        error: 'Failed to process interpretation request'
+        error: 'Failed to process interpretation request: ' + error.message
       })
     };
   }
