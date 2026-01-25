@@ -1,17 +1,27 @@
+# Gas Tech AI Tutor - Mike Kapin HVAC Education
+# Next.js application with AI tutoring features
+
 [build]
-  command = "npm run build"
+  command = "npm install && npm run build"
   publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# Environment variables required:
+# - ANTHROPIC_API_KEY: Your Anthropic Claude API key
+# - NEXT_PUBLIC_AI_PROVIDER: "anthropic"
+# - NEXT_PUBLIC_CLAUDE_MODEL: "claude-sonnet-4-5-20250929"
 
-# Redirect rules for Next.js
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
