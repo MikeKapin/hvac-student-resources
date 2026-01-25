@@ -10,7 +10,6 @@ export default function CSAResources() {
     ],
     updates: [
       { title: 'CSA Standards Updates', url: 'https://www.csagroup.org/standards/', description: 'Browse all CSA standards and latest updates' },
-      { title: 'CSA Research & Resources', url: 'https://www.csagroup.org/article/research-resources/', description: 'Technical research, bulletins, and resources' },
     ],
     community: [
       { title: 'CSA Communities', url: 'https://community.csagroup.org/', description: 'Discussion forums and community support for gas professionals' },
