@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TSSA G3 Practice Exam | Mike Kapin</title>
+    <!-- Redeployed: 2026-01-25 - Updated to match G2 structure -->
     <style>
         * {
             margin: 0;
@@ -38,7 +39,6 @@
 
         .header h1 {
             font-size: 2.5em;
-        }        @media (max-width: 768px) {            .header h1 {                font-size: 1.8em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
@@ -438,6 +438,204 @@
             font-size: 0.9em;
             line-height: 1.6;
             padding-top: 15px;
+        }
+
+        /* Access Gate Styles */
+        .modal-overlay {
+            background: #1F1F1F;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .access-gate-content {
+            background: #2A2A2A;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            animation: slideUp 0.6s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .access-gate-title {
+            font-size: 2em;
+            color: #E8E8E8;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .access-gate-subtitle {
+            font-size: 1.1em;
+            color: #A0A0A0;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .tier-selection-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .tier-button {
+            background: #1F1F1F;
+            color: white;
+            border: none;
+            padding: 20px 30px;
+            border-radius: 12px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .tier-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .tier-button.student {
+            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+        }
+
+        .tier-button.student:hover {
+            box-shadow: 0 6px 25px rgba(78, 205, 196, 0.5);
+        }
+
+        .student-code-entry {
+            display: none;
+            animation: slideUp 0.5s ease;
+        }
+
+        .student-code-entry.active {
+            display: block;
+        }
+
+        .passkey-input-container {
+            margin: 30px 0;
+        }
+
+        .passkey-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            border: 2px solid #3F3F3F;
+            border-radius: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .passkey-input:focus {
+            outline: none;
+            border-color: #4ECDC4;
+            box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
+        }
+
+        .submit-code-button {
+            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-code-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(78, 205, 196, 0.4);
+        }
+
+        .back-button {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #5a6268;
+        }
+
+        .error-message {
+            background: #2A2A2A;
+            color: #dc3545;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid #dc3545;
+            display: none;
+            animation: shake 0.5s ease;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid #28a745;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .code-info {
+            background: #343434;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #3F3F3F;
+        }
+
+        .code-info h4 {
+            color: #E8E8E8;
+            margin-bottom: 10px;
+        }
+
+        .code-info p {
+            color: #A0A0A0;
+            font-size: 0.95em;
+            line-height: 1.6;
         }
 
         @media (max-width: 768px) {
