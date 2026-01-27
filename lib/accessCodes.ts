@@ -5,6 +5,8 @@
 
 export const VALID_ACCESS_CODES = [
   // First Year Students
+  '1197478', // Graydon Graat
+  '1203094', // (New Student)
   '1132756', // Allan Selim
   '1319368', // Amari Thompson
   '1333721', // Bennet Smibert
