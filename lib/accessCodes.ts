@@ -66,6 +66,42 @@ export const VALID_ACCESS_CODES = [
   '1281585', // Quinn Paquette
   '1244969', // Shawn Mcphee
 
+  // Winter 2026 Students (Added Jan 28, 2026)
+  '1333721', // A. Barney
+  '1333274', // B. Judson
+  '1278078', // B. Zhang
+  '1320032', // B. Redekop
+  '1332280', // C. Chafee
+  '1354368', // C. Allison
+  '1321749', // D. O'Brien
+  '1338146', // D. Carosoriano
+  '1325231', // H. Gibson
+  '1299023', // J. Bos
+  '1326431', // J. Hans
+  '1331026', // J. Heywood
+  '1327141', // J. Vanwolde
+  '1327626', // J. Vanarragon
+  '1323128', // K. Zhang
+  '1327714', // L. Liu
+  '1310445', // M. Akwitti
+  '1325845', // M. Akcay
+  '1288808', // M. Wang
+  '1331586', // M. Lynds
+  '1004922', // M. Brown
+  '1258250', // M. Thomson
+  '1314901', // M. Sadonoja
+  '0162684', // N. Abbasey
+  '1177589', // N. Verma
+  '1309271', // J. Zhang
+  '0978363', // R. Bogaert
+  '1331376', // S. Reiter
+  '1248345', // T. Sleegers
+  '1194403', // W. Slemin
+  '1099635', // X. Han
+  '1250376', // Y. Liu
+  '1282231', // Z. Alashmouti
+  '1292860', // Z. Than
+
   // Faculty
   '0436277', // Mike Kapin
 ];
