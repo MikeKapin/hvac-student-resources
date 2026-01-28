@@ -101,6 +101,7 @@ export const VALID_ACCESS_CODES = [
   '1250376', // Y. Liu
   '1282231', // Z. Alashmouti
   '1292860', // Z. Than
+  '0840616', // (New Student)
 
   // Faculty
   '0436277', // Mike Kapin
