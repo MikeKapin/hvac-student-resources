@@ -128,26 +128,26 @@ export default function CareerCalculator() {
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-claude-accent-orange mb-4">
+          <h1 className="text-3xl font-bold text-orange-600 mb-4">
             Your Recommended Career Path
           </h1>
-          <p className="text-claude-text-secondary">
-            Based on your responses, here's the best path forward for your HVAC career.
+          <p className="text-gray-600">
+            Based on your responses and Mike's expertise in HVAC education, here's the best path forward for your career.
           </p>
         </div>
 
-        <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-claude-text-primary mb-4">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
             🎯 {recommendedPath.title}
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
-              <h3 className="font-semibold text-claude-text-primary mb-2">Required Certifications</h3>
-              <ul className="text-claude-text-secondary">
+              <h3 className="font-semibold text-gray-800 mb-2">Required Certifications</h3>
+              <ul className="text-gray-600">
                 {recommendedPath.certifications.map((cert, index) => (
                   <li key={index} className="flex items-center space-x-2">
-                    <span className="text-claude-accent-orange">✓</span>
+                    <span className="text-orange-600">✓</span>
                     <span>{cert}</span>
                   </li>
                 ))}
@@ -155,47 +155,56 @@ export default function CareerCalculator() {
             </div>
             
             <div>
-              <h3 className="font-semibold text-claude-text-primary mb-2">Timeline</h3>
-              <p className="text-claude-text-secondary">{recommendedPath.timeline}</p>
+              <h3 className="font-semibold text-gray-800 mb-2">Timeline</h3>
+              <p className="text-gray-600">{recommendedPath.timeline}</p>
               
-              <h3 className="font-semibold text-claude-text-primary mb-2 mt-4">Expected Salary Range</h3>
-              <p className="text-claude-accent-orange font-semibold">{recommendedPath.averageSalary}</p>
+              <h3 className="font-semibold text-gray-800 mb-2 mt-4">Expected Salary Range (Ontario)</h3>
+              <p className="text-orange-600 font-semibold">{recommendedPath.averageSalary}</p>
             </div>
           </div>
           
-          <p className="text-claude-text-secondary mb-6">{recommendedPath.description}</p>
+          <p className="text-gray-600 mb-6">{recommendedPath.description}</p>
           
-          <h3 className="font-semibold text-claude-text-primary mb-4">Your Next Steps</h3>
+          <h3 className="font-semibold text-gray-800 mb-4">Mike's Recommended Next Steps</h3>
           <div className="space-y-3">
             {recommendedPath.nextSteps.map((step, index) => (
               <div key={index} className="flex items-start space-x-3">
-                <span className="bg-claude-accent-orange text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold mt-0.5">
+                <span className="bg-orange-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold mt-0.5">
                   {index + 1}
                 </span>
-                <p className="text-claude-text-secondary">{step}</p>
+                <p className="text-gray-600">{step}</p>
               </div>
             ))}
+          </div>
+          
+          <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <p className="text-sm text-blue-800">
+              <span className="font-semibold">Mike's Pro Tip:</span> Start with the G2 certification - 
+              it's the foundation for all gas work in Canada. I've helped hundreds of students pass their 
+              G2 exam using the materials on this site.
+            </p>
           </div>
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-claude-accent-orange to-claude-accent-blue rounded-lg p-8 text-white text-center">
-          <h3 className="text-2xl font-bold mb-4">Ready to Start Your Journey?</h3>
+        <div className="bg-gradient-to-r from-orange-600 to-blue-600 rounded-lg p-8 text-white text-center">
+          <h3 className="text-2xl font-bold mb-4">Ready to Start Your HVAC Journey?</h3>
           <p className="mb-6 opacity-90">
-            Get access to our comprehensive study materials, practice exams, and career guidance.
+            Access Mike's proven study materials, practice exams, and career guidance used by 
+            Fanshawe College students and technicians across Canada.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/g2" 
-              className="bg-white text-claude-accent-orange px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+              className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
             >
               Start G2 Practice Exams
             </Link>
             <Link 
-              href="/csa" 
+              href="/csa-reference" 
               className="bg-white/20 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition"
             >
-              Study CSA Codes
+              Study CSA B149.1 Code
             </Link>
           </div>
         </div>
@@ -203,7 +212,7 @@ export default function CareerCalculator() {
         <div className="text-center mt-8">
           <button 
             onClick={() => setShowResults(false)}
-            className="text-claude-accent-blue hover:text-claude-accent-blue-hover transition"
+            className="text-blue-600 hover:text-blue-800 transition"
           >
             ← Take the Assessment Again
           </button>
@@ -215,19 +224,25 @@ export default function CareerCalculator() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-claude-accent-orange mb-4">
+        <h1 className="text-4xl font-bold text-orange-600 mb-4">
           HVAC Career Path Calculator
         </h1>
-        <p className="text-xl text-claude-text-secondary max-w-3xl mx-auto">
-          Find your ideal path in the HVAC industry. Get personalized certification recommendations, 
+        <p className="text-lg text-gray-600 mb-4 max-w-3xl mx-auto">
+          Find your ideal path in the Canadian HVAC industry. Get personalized certification recommendations, 
           timeline estimates, and salary projections based on your goals and experience.
         </p>
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
+          <p className="text-sm text-blue-800">
+            <span className="font-semibold">Created by Mike Kapin</span> - HVAC Educator at Fanshawe College, 
+            G2/G3 Certified, and author of Canadian Gas Technician educational resources.
+          </p>
+        </div>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-8">
         {/* Experience Level */}
-        <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-claude-text-primary mb-4">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">
             What's your current experience level?
           </h2>
           <div className="space-y-3">
@@ -243,18 +258,18 @@ export default function CareerCalculator() {
                   value={option.value}
                   checked={formData.experience === option.value}
                   onChange={(e) => setFormData(prev => ({ ...prev, experience: e.target.value }))}
-                  className="text-claude-accent-orange"
+                  className="text-orange-600"
                   required
                 />
-                <span className="text-claude-text-primary">{option.label}</span>
+                <span className="text-gray-700">{option.label}</span>
               </label>
             ))}
           </div>
         </div>
 
         {/* Interests */}
-        <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-claude-text-primary mb-4">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">
             What type of work interests you? (Select all that apply)
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
@@ -272,23 +287,23 @@ export default function CareerCalculator() {
                   value={option.value}
                   checked={formData.interests.includes(option.value)}
                   onChange={() => handleInterestChange(option.value)}
-                  className="text-claude-accent-orange"
+                  className="text-orange-600"
                 />
-                <span className="text-claude-text-primary">{option.label}</span>
+                <span className="text-gray-700">{option.label}</span>
               </label>
             ))}
           </div>
         </div>
 
         {/* Location */}
-        <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-claude-text-primary mb-4">
-            Where are you located?
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">
+            Where are you located in Canada?
           </h2>
           <select
             value={formData.location}
             onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
-            className="w-full md:w-1/2 px-3 py-2 border border-claude-border rounded-lg bg-claude-bg-primary text-claude-text-primary"
+            className="w-full md:w-1/2 px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-800"
             required
           >
             <option value="">Select your province...</option>
@@ -309,8 +324,8 @@ export default function CareerCalculator() {
         </div>
 
         {/* Time Commitment */}
-        <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-claude-text-primary mb-4">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">
             How much time can you dedicate to training?
           </h2>
           <div className="space-y-3">
@@ -326,40 +341,41 @@ export default function CareerCalculator() {
                   value={option.value}
                   checked={formData.timeCommitment === option.value}
                   onChange={(e) => setFormData(prev => ({ ...prev, timeCommitment: e.target.value }))}
-                  className="text-claude-accent-orange"
+                  className="text-orange-600"
                   required
                 />
-                <span className="text-claude-text-primary">{option.label}</span>
+                <span className="text-gray-700">{option.label}</span>
               </label>
             ))}
           </div>
         </div>
 
         {/* Email for Results */}
-        <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-claude-text-primary mb-4">
-            Get your personalized career plan
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">
+            Get your personalized career plan from Mike
           </h2>
-          <p className="text-claude-text-secondary mb-4">
-            Enter your email to receive your detailed career roadmap and exclusive HVAC resources.
+          <p className="text-gray-600 mb-4">
+            Enter your email to receive your detailed career roadmap and exclusive study materials 
+            used by Mike's students at Fanshawe College.
           </p>
           <input
             type="email"
             placeholder="your.email@example.com"
             value={formData.email}
             onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-            className="w-full md:w-1/2 px-3 py-2 border border-claude-border rounded-lg bg-claude-bg-primary text-claude-text-primary"
+            className="w-full md:w-1/2 px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-800"
             required
           />
-          <p className="text-xs text-claude-text-secondary mt-2">
-            We'll only send you helpful HVAC career content. No spam, unsubscribe anytime.
+          <p className="text-xs text-gray-500 mt-2">
+            Mike will only send you helpful HVAC career content. No spam, unsubscribe anytime.
           </p>
         </div>
 
         <div className="text-center">
           <button
             type="submit"
-            className="bg-claude-accent-orange text-white px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition"
+            className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition"
           >
             Get My Career Path Recommendation
           </button>
@@ -368,20 +384,25 @@ export default function CareerCalculator() {
 
       {/* Trust Indicators */}
       <div className="mt-16 text-center">
-        <p className="text-claude-text-secondary mb-4">Trusted by HVAC students across Canada</p>
-        <div className="flex justify-center items-center space-x-8 text-claude-text-secondary">
+        <p className="text-gray-600 mb-4">Trusted by HVAC students and professionals across Canada</p>
+        <div className="flex justify-center items-center space-x-8 text-gray-600">
           <span className="flex items-center space-x-2">
-            <span className="text-claude-accent-orange">✓</span>
-            <span>CSA Compliant Content</span>
+            <span className="text-orange-600">✓</span>
+            <span>CSA B149.1-25 Compliant</span>
           </span>
           <span className="flex items-center space-x-2">
-            <span className="text-claude-accent-orange">✓</span>
-            <span>TSSA Approved Methods</span>
+            <span className="text-orange-600">✓</span>
+            <span>TSSA G2/G3 Aligned</span>
           </span>
           <span className="flex items-center space-x-2">
-            <span className="text-claude-accent-orange">✓</span>
-            <span>Industry Expert Created</span>
+            <span className="text-orange-600">✓</span>
+            <span>Fanshawe College Approved</span>
           </span>
+        </div>
+        <div className="mt-4">
+          <p className="text-sm text-gray-500">
+            Created by Mike Kapin - HVAC Educator, G2/G3 Certified Professional
+          </p>
         </div>
       </div>
     </div>
