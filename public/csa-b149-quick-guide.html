@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Tech's Guide to CSA B149.1-25 (8th Edition) Key Changes</title>
+    <style>
+        /* Claude Dark Mode Color Scheme */
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2c2c2c;
+            --bg-tertiary: #3c3c3c;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-accent: #ff7b54;
+            --text-code: #4CAF50;
+            --border: #444;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-accent);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .disclaimer {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--warning);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--text-accent);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--text-accent);
+            padding-bottom: 10px;
+        }
+
+        .subsection {
+            margin: 25px 0;
+            padding: 20px;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+        }
+
+        .subsection-title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .code-ref {
+            background: var(--bg-primary);
+            color: var(--text-code);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+
+        .change-highlight {
+            background: rgba(255, 123, 84, 0.1);
+            border-left: 4px solid var(--text-accent);
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .practical-tip {
+            background: rgba(34, 197, 94, 0.1);
+            border-left: 4px solid var(--success);
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--danger);
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .checklist {
+            background: var(--bg-primary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 10px 0;
+            padding: 8px;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-right: 12px;
+            margin-top: 2px;
+            transform: scale(1.2);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: var(--bg-tertiary);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: var(--text-accent);
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 2px solid var(--border);
+            color: var(--text-secondary);
+            margin-top: 40px;
+        }
+
+        .author-credit {
+            color: var(--text-accent);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">Field Tech's Guide to CSA B149.1-25</h1>
+            <p class="subtitle">(8th Edition - February 2025) Key Changes & Practical Applications</p>
+            <p class="subtitle"><strong>By Mike Kapin - LARK Labs Educational Resources</strong></p>
+        </header>
+
+        <div class="disclaimer">
+            <strong>⚠️ Important Disclaimer:</strong> This guide provides educational interpretation of CSA B149.1-25 (8th Edition) based on practical field experience. It does not replace the official CSA standard. Always refer to the complete CSA B149.1-25 code for definitive requirements. This interpretation is for educational purposes only.
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">🚨 What's New in the 8th Edition (February 2025)</h2>
+            
+            <div class="change-highlight">
+                <strong>Major Update:</strong> The 8th Edition represents the most significant code revision in over 5 years, with substantial changes affecting daily field work.
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3 class="card-title">Section 6 - Piping Changes</h3>
+                    <ul>
+                        <li><strong>Enhanced CSST requirements</strong> - <span class="code-ref">6.8</span></li>
+                        <li><strong>New underground piping protection</strong> - <span class="code-ref">6.6</span></li>
+                        <li><strong>Revised pipe sizing calculations</strong> - <span class="code-ref">6.3</span></li>
+                        <li><strong>Updated support requirements</strong> - <span class="code-ref">6.5</span></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Section 7 - Appliance Updates</h3>
+                    <ul>
+                        <li><strong>Heat pump/gas hybrid provisions</strong> - <span class="code-ref">7.5</span></li>
+                        <li><strong>Enhanced combustion air requirements</strong> - <span class="code-ref">7.3</span></li>
+                        <li><strong>New outdoor appliance rules</strong> - <span class="code-ref">7.7</span></li>
+                        <li><strong>Revised appliance clearances</strong> - <span class="code-ref">7.4</span></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Section 8 - Venting Revisions</h3>
+                    <ul>
+                        <li><strong>High-efficiency venting updates</strong> - <span class="code-ref">8.5</span></li>
+                        <li><strong>New termination requirements</strong> - <span class="code-ref">8.9</span></li>
+                        <li><strong>Enhanced direct vent rules</strong> - <span class="code-ref">8.6</span></li>
+                        <li><strong>Mechanical draft clarifications</strong> - <span class="code-ref">8.7</span></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Section 5 - Equipment Changes</h3>
+                    <ul>
+                        <li><strong>New regulator venting requirements</strong> - <span class="code-ref">5.1</span></li>
+                        <li><strong>Enhanced meter protection</strong> - <span class="code-ref">5.3</span></li>
+                        <li><strong>Revised clearance distances</strong> - <span class="code-ref">5.4</span></li>
+                        <li><strong>Updated tank installation rules</strong> - <span class="code-ref">5.5</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">🔧 Field Impact: What This Means for Your Installations</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Heat Pump/Gas Hybrid Systems <span class="code-ref">Section 7.5</span></h3>
+                
+                <div class="change-highlight">
+                    <strong>New Requirement:</strong> Special provisions now exist for hybrid heating systems combining heat pumps with gas backup.
+                </div>
+
+                <div class="practical-tip">
+                    <strong>Field Application:</strong>
+                    <ul>
+                        <li>Gas appliance must be sized for full heating load (not just backup)</li>
+                        <li>Combustion air calculations remain at full capacity</li>
+                        <li>Venting system sized for gas appliance operation</li>
+                        <li>Control integration must meet electrical code requirements</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <strong>Common Mistake:</strong> Don't size the gas component as "backup only" - it must handle full load when heat pump is down.
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Enhanced Combustion Air Requirements <span class="code-ref">Section 7.3</span></h3>
+                
+                <div class="change-highlight">
+                    <strong>Key Changes:</strong> More specific requirements for combustion air in tighter building construction.
+                </div>
+
+                <div class="practical-tip">
+                    <strong>What's Different:</strong>
+                    <ul>
+                        <li>Stricter air change calculations for modern homes</li>
+                        <li>Enhanced provisions for direct-connected outdoor air</li>
+                        <li>New requirements for motorized combustion air dampers</li>
+                        <li>Specific rules for basement/confined space installations</li>
+                    </ul>
+                </div>
+
+                <div class="checklist">
+                    <h4>Combustion Air Verification Checklist:</h4>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">Calculate total BTU input of all appliances in space</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check2">
+                        <label for="check2">Verify building construction type (tight vs. standard)</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">Measure actual space volume (L×W×H)</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check4">
+                        <label for="check4">Apply correct air change calculation per <span class="code-ref">7.3.2</span></label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check5">
+                        <label for="check5">Size outdoor air openings if required</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">High-Efficiency Equipment Venting <span class="code-ref">Section 8.5</span></h3>
+                
+                <div class="change-highlight">
+                    <strong>Major Update:</strong> Specific requirements now exist for condensing appliance venting systems.
+                </div>
+
+                <div class="practical-tip">
+                    <strong>Field Impact:</strong>
+                    <ul>
+                        <li>Condensate drainage must be properly sloped and trapped</li>
+                        <li>Venting materials must be specifically listed for condensing operation</li>
+                        <li>Termination clearances increased for high-efficiency units</li>
+                        <li>Special provisions for shared venting systems</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <strong>Critical:</strong> Standard B-vent is NOT approved for condensing appliances. Use only manufacturer-specified materials.
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">⚠️ Common Field Mistakes to Avoid</h2>
+
+            <div class="grid">
+                <div class="card">
+                    <h3 class="card-title">Regulator Installation</h3>
+                    <div class="warning-box">
+                        <strong>Mistake:</strong> Installing regulators without proper venting
+                        <br><strong>Code:</strong> <span class="code-ref">5.1.4</span>
+                        <br><strong>Fix:</strong> All regulators must vent to outdoors, never to interior spaces
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Meter Clearances</h3>
+                    <div class="warning-box">
+                        <strong>Mistake:</strong> Insufficient clearance from openings
+                        <br><strong>Code:</strong> <span class="code-ref">5.4.2</span>
+                        <br><strong>Fix:</strong> 900mm minimum from windows/doors that can open
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">CSST Installation</h3>
+                    <div class="warning-box">
+                        <strong>Mistake:</strong> Improper CSST support spacing
+                        <br><strong>Code:</strong> <span class="code-ref">6.8.3</span>
+                        <br><strong>Fix:</strong> Follow manufacturer specs + code minimums
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Appliance Clearances</h3>
+                    <div class="warning-box">
+                        <strong>Mistake:</strong> Using old clearance values
+                        <br><strong>Code:</strong> <span class="code-ref">7.4</span>
+                        <br><strong>Fix:</strong> Always check manufacturer + current code requirements
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">📋 Quick Reference Checklist</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-title">New Installation Verification</h3>
+                
+                <div class="checklist">
+                    <h4>Before You Start:</h4>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="start1">
+                        <label for="start1">Verify appliance specifications and requirements</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="start2">
+                        <label for="start2">Check building construction type for combustion air calculations</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="start3">
+                        <label for="start3">Confirm gas supply pressure and capacity</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="start4">
+                        <label for="start4">Review local authority amendments to CSA code</label>
+                    </div>
+                </div>
+
+                <div class="checklist">
+                    <h4>During Installation:</h4>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="during1">
+                        <label for="during1">Follow proper pipe sizing calculations per <span class="code-ref">Section 6.3</span></label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="during2">
+                        <label for="during2">Install regulators with proper outdoor venting per <span class="code-ref">Section 5.1</span></label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="during3">
+                        <label for="during3">Verify combustion air adequacy per <span class="code-ref">Section 7.3</span></label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="during4">
+                        <label for="during4">Use approved venting materials per <span class="code-ref">Section 8.2</span></label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="during5">
+                        <label for="during5">Maintain required clearances per <span class="code-ref">Sections 5.4 & 7.4</span></label>
+                    </div>
+                </div>
+
+                <div class="checklist">
+                    <h4>Before You Leave:</h4>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="final1">
+                        <label for="final1">Perform leak test on all connections per <span class="code-ref">Section 9</span></label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="final2">
+                        <label for="final2">Test all safety devices and controls</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="final3">
+                        <label for="final3">Document installation and testing results</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="final4">
+                        <label for="final4">Provide operation instructions to customer</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">🎯 Real-World Scenarios</h2>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Scenario 1: Basement Furnace Replacement in New Home</h3>
+                <div class="practical-tip">
+                    <strong>Challenge:</strong> Installing 100,000 BTU furnace in modern, tight construction basement
+                    <br><br>
+                    <strong>8th Edition Requirements:</strong>
+                    <ul>
+                        <li>Apply enhanced air change calculations for tight construction</li>
+                        <li>Verify combustion air adequacy using <span class="code-ref">Section 7.3</span> formulas</li>
+                        <li>Install outdoor combustion air if space is insufficient</li>
+                        <li>Use approved condensing vent materials for high-efficiency unit</li>
+                        <li>Maintain new clearance requirements from foundation walls</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Scenario 2: Heat Pump/Gas Furnace Hybrid System</h3>
+                <div class="practical-tip">
+                    <strong>Challenge:</strong> Installing backup gas furnace for heat pump system
+                    <br><br>
+                    <strong>8th Edition Requirements:</strong>
+                    <ul>
+                        <li>Size gas furnace for full heating load (not just backup)</li>
+                        <li>Calculate combustion air for full gas furnace capacity</li>
+                        <li>Install venting system sized for gas operation</li>
+                        <li>Ensure control integration meets electrical requirements</li>
+                        <li>Follow new hybrid system provisions in <span class="code-ref">Section 7.5</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Scenario 3: Meter Set Relocation</h3>
+                <div class="practical-tip">
+                    <strong>Challenge:</strong> Moving existing meter set to meet new clearance requirements
+                    <br><br>
+                    <strong>8th Edition Requirements:</strong>
+                    <ul>
+                        <li>Apply updated clearance distances from <span class="code-ref">Section 5.4</span></li>
+                        <li>Ensure regulator venting complies with <span class="code-ref">Section 5.1</span></li>
+                        <li>Install enhanced meter protection per <span class="code-ref">Section 5.3</span></li>
+                        <li>Consider new underground piping protection if applicable</li>
+                        <li>Update pressure testing procedures per <span class="code-ref">Section 9</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">📚 Understanding the Code Structure</h2>
+            
+            <div class="change-highlight">
+                <strong>Teaching Point:</strong> Knowing HOW the code is organized helps you find answers faster and understand relationships between requirements.
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3 class="card-title">Section 1-3: Foundation</h3>
+                    <ul>
+                        <li><strong>Section 1:</strong> Scope - What the code covers</li>
+                        <li><strong>Section 2:</strong> Referenced standards</li>
+                        <li><strong>Section 3:</strong> Definitions - Start here for terminology</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Section 4: General Requirements</h3>
+                    <ul>
+                        <li>Overarching rules for all installations</li>
+                        <li>LP gas specific requirements</li>
+                        <li>Gas supply equipment basics</li>
+                        <li>General appliance requirements</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Section 5: Equipment</h3>
+                    <ul>
+                        <li>Pressure regulators (all types)</li>
+                        <li>Gas meters and meter sets</li>
+                        <li>LP gas tanks and containers</li>
+                        <li>Equipment protection requirements</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Section 6: Piping & Tubing</h3>
+                    <ul>
+                        <li>Materials and fittings</li>
+                        <li>Sizing calculations</li>
+                        <li>Installation requirements</li>
+                        <li>CSST specific rules</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Section 7: Appliances</h3>
+                    <ul>
+                        <li>Installation requirements</li>
+                        <li>Combustion air calculations</li>
+                        <li>Clearances and locations</li>
+                        <li>Specific appliance types</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Section 8: Venting</h3>
+                    <ul>
+                        <li>Venting system requirements</li>
+                        <li>Materials and sizing</li>
+                        <li>Installation methods</li>
+                        <li>Termination requirements</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Section 9-10: Operations</h3>
+                    <ul>
+                        <li><strong>Section 9:</strong> Inspection and testing</li>
+                        <li><strong>Section 10:</strong> Service and maintenance</li>
+                        <li>Required procedures and documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Created by <span class="author-credit">Mike Kapin, HVAC Educator</span></p>
+            <p>Fanshawe College | LARK Labs Educational Resources</p>
+            <p><strong>For more HVAC education resources:</strong> mikekapin.com | LARK Labs</p>
+            <p class="disclaimer">This guide is for educational purposes only. Always consult the official CSA B149.1-25 standard for complete requirements.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Save checkbox states to localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            checkboxes.forEach(checkbox => {
+                // Load saved state
+                const savedState = localStorage.getItem(checkbox.id);
+                if (savedState === 'true') {
+                    checkbox.checked = true;
+                }
+                
+                // Save state on change
+                checkbox.addEventListener('change', function() {
+                    localStorage.setItem(this.id, this.checked);
+                });
+            });
+        });
+
+        // Add print functionality
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>
