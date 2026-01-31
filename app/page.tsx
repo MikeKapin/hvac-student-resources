@@ -38,12 +38,16 @@ export default function Home() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Hero Section */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-claude-accent-orange mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-brand-accent-orange mb-4">
           HVAC Student Resources
         </h1>
-        <p className="text-xl text-claude-text-secondary max-w-3xl mx-auto">
-          Free educational resources for Gas Technician students. Access study tools, official codes, regulations, and certification information.
+        <p className="text-xl text-brand-text-secondary max-w-3xl mx-auto mb-6">
+          Professional educational resources for Gas Technician students. Access study tools, official codes, regulations, and certification information.
         </p>
+        <div className="inline-flex items-center space-x-2 bg-brand-accent-orange/10 text-brand-accent-orange px-4 py-2 rounded-lg">
+          <span className="font-semibold">Created by Mike Kapin</span>
+          <span className="text-sm">| HVAC Educator</span>
+        </div>
       </div>
 
       {/* Resource Cards */}
@@ -52,16 +56,16 @@ export default function Home() {
           <Link
             key={resource.href}
             href={resource.href}
-            className="bg-claude-bg-secondary border border-claude-border rounded-lg p-8 hover:bg-claude-bg-hover transition group"
+            className="bg-brand-bg-secondary border border-brand-border rounded-lg p-8 hover:bg-brand-bg-hover transition group"
           >
             <div className="text-4xl mb-4">{resource.icon}</div>
-            <h2 className="text-2xl font-bold text-claude-text-primary mb-2 group-hover:text-claude-accent-orange transition">
+            <h2 className="text-2xl font-bold text-brand-text-primary mb-2 group-hover:text-brand-accent-orange transition">
               {resource.title}
             </h2>
-            <p className="text-claude-text-secondary">
+            <p className="text-brand-text-secondary">
               {resource.description}
             </p>
-            <div className="mt-4 text-claude-accent-blue group-hover:text-claude-accent-blue-hover transition flex items-center">
+            <div className="mt-4 text-brand-accent-blue group-hover:text-brand-accent-blue-hover transition flex items-center">
               Explore Resources
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -71,11 +75,19 @@ export default function Home() {
         ))}
       </div>
 
+      {/* About Section */}
+      <div className="bg-brand-bg-secondary border border-brand-border rounded-lg p-6 mb-8">
+        <h3 className="text-lg font-semibold text-brand-text-primary mb-3">🎓 About These Resources</h3>
+        <p className="text-brand-text-secondary text-sm leading-relaxed">
+          These educational resources were developed by <strong>Mike Kapin</strong>, an HVAC educator dedicated to supporting Gas Technician students across Canada. All content is designed to supplement your formal education and help you succeed in your certification journey.
+        </p>
+      </div>
+
       {/* Disclaimer Section */}
-      <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-6">
-        <h3 className="text-lg font-semibold text-claude-text-primary mb-3">📢 Disclaimer</h3>
-        <p className="text-claude-text-secondary text-sm leading-relaxed">
-          These resources are provided for educational purposes only. Always verify information with official sources (CSA, TSSA) and your instructors. While we strive for accuracy, regulations and codes may change. This site is not affiliated with any educational institution or business entity.
+      <div className="bg-brand-bg-secondary border border-brand-border rounded-lg p-6">
+        <h3 className="text-lg font-semibold text-brand-text-primary mb-3">📢 Important Notice</h3>
+        <p className="text-brand-text-secondary text-sm leading-relaxed">
+          These resources are provided for educational purposes only. Always verify information with official sources (CSA, TSSA) and your instructors. While we strive for accuracy, regulations and codes may change. These materials supplement but do not replace proper training and certification programs.
         </p>
       </div>
     </div>

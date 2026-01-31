@@ -28,20 +28,20 @@ export default function AccessGate({ onAccessGranted }: AccessGateProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-claude-dark-bg via-claude-dark-secondary to-claude-dark-bg flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-brand-dark-bg via-brand-dark-secondary to-brand-dark-bg flex items-center justify-center px-4">
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-claude-dark-text mb-2">
+          <h1 className="text-3xl font-bold text-brand-dark-text mb-2">
             HVAC Student Resources
           </h1>
-          <p className="text-claude-dark-text-secondary">
-            Free educational resources for Gas Technician students
+          <p className="text-brand-dark-text-secondary">
+            Professional educational resources for Gas Technician students
           </p>
         </div>
 
         {/* Access Form */}
-        <div className="bg-claude-dark-secondary border border-claude-dark-border rounded-lg p-8 shadow-xl">
+        <div className="bg-brand-dark-secondary border border-brand-dark-border rounded-lg p-8 shadow-xl">
           <div className="text-center mb-6">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-mike-orange/10 rounded-full mb-4">
               <svg
@@ -58,10 +58,10 @@ export default function AccessGate({ onAccessGranted }: AccessGateProps) {
                 />
               </svg>
             </div>
-            <h2 className="text-xl font-semibold text-claude-dark-text mb-2">
+            <h2 className="text-xl font-semibold text-brand-dark-text mb-2">
               Student Access Required
             </h2>
-            <p className="text-sm text-claude-dark-text-secondary">
+            <p className="text-sm text-brand-dark-text-secondary">
               Enter your student or employee number to access the resources
             </p>
           </div>
@@ -70,7 +70,7 @@ export default function AccessGate({ onAccessGranted }: AccessGateProps) {
             <div className="mb-4">
               <label
                 htmlFor="accessCode"
-                className="block text-sm font-medium text-claude-dark-text mb-2"
+                className="block text-sm font-medium text-brand-dark-text mb-2"
               >
                 Student / Employee Number
               </label>
@@ -80,7 +80,7 @@ export default function AccessGate({ onAccessGranted }: AccessGateProps) {
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
                 placeholder="Enter your ID number"
-                className="w-full px-4 py-3 bg-claude-dark-bg border border-claude-dark-border rounded-lg text-claude-dark-text placeholder-claude-dark-text-secondary focus:outline-none focus:ring-2 focus:ring-mike-orange focus:border-transparent"
+                className="w-full px-4 py-3 bg-brand-dark-bg border border-brand-dark-border rounded-lg text-brand-dark-text placeholder-brand-dark-text-secondary focus:outline-none focus:ring-2 focus:ring-mike-orange focus:border-transparent"
                 disabled={isSubmitting}
                 autoComplete="off"
                 required
@@ -102,8 +102,8 @@ export default function AccessGate({ onAccessGranted }: AccessGateProps) {
             </button>
           </form>
 
-          <div className="mt-6 pt-6 border-t border-claude-dark-border">
-            <p className="text-xs text-claude-dark-text-secondary text-center">
+          <div className="mt-6 pt-6 border-t border-brand-dark-border">
+            <p className="text-xs text-brand-dark-text-secondary text-center">
               Access is granted for 7 days. Your ID is securely stored locally on your device.
             </p>
           </div>
@@ -111,11 +111,11 @@ export default function AccessGate({ onAccessGranted }: AccessGateProps) {
 
         {/* Footer */}
         <div className="text-center mt-8">
-          <p className="text-sm text-claude-dark-text-secondary">
+          <p className="text-sm text-brand-dark-text-secondary">
             Created by <span className="text-mike-orange font-semibold">Mike Kapin</span>
           </p>
-          <p className="text-xs text-claude-dark-text-secondary mt-1">
-            HVAC Educator | Free Educational Resources
+          <p className="text-xs text-brand-dark-text-secondary mt-1">
+            HVAC Educator | Professional Educational Resources
           </p>
         </div>
       </div>

@@ -21,13 +21,13 @@ export default function RootLayout({
           <main className="min-h-screen">
             {children}
           </main>
-          <footer className="bg-claude-bg-secondary border-t border-claude-border py-8 mt-16">
+          <footer className="bg-brand-bg-secondary border-t border-brand-border py-8 mt-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <p className="text-claude-text-secondary mb-2">
-                Created by <span className="text-claude-accent-orange font-semibold">Mike Kapin</span> | HVAC Educator
+              <p className="text-brand-text-secondary mb-2">
+                Created by <span className="text-brand-accent-orange font-semibold">Mike Kapin</span> | HVAC Educator
               </p>
-              <p className="text-claude-text-tertiary text-sm">
-                Free educational resources | Not affiliated with Fanshawe College or any business entity
+              <p className="text-brand-text-tertiary text-sm">
+                Professional educational resources for Gas Technician students | Independent educational content
               </p>
             </div>
           </footer>
