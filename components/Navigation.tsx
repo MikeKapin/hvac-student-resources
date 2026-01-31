@@ -9,7 +9,7 @@ export default function Navigation() {
             HVAC Student Resources
           </Link>
 
-          <div className="flex gap-6">
+          <div className="flex gap-4 items-center">
             <Link href="/g2" className="text-claude-text-secondary hover:text-claude-text-primary hover:bg-claude-bg-tertiary px-3 py-2 rounded-md transition">
               G2 Resources
             </Link>
@@ -19,8 +19,14 @@ export default function Navigation() {
             <Link href="/csa" className="text-claude-text-secondary hover:text-claude-text-primary hover:bg-claude-bg-tertiary px-3 py-2 rounded-md transition">
               CSA
             </Link>
+            <Link href="/csa-reference" className="text-claude-accent-blue hover:text-claude-accent-blue-hover px-3 py-2 rounded-md transition font-medium">
+              📚 Quick Ref
+            </Link>
             <Link href="/tssa" className="text-claude-text-secondary hover:text-claude-text-primary hover:bg-claude-bg-tertiary px-3 py-2 rounded-md transition">
               TSSA
+            </Link>
+            <Link href="/career-calculator" className="bg-claude-accent-orange text-white px-4 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition">
+              📊 Career Path
             </Link>
           </div>
         </div>

@@ -47,6 +47,40 @@ export default function CSAResources() {
         Official CSA codes, standards, updates, and community resources
       </p>
 
+      {/* NEW: CSA Quick Reference Tool */}
+      <div className="bg-gradient-to-r from-claude-accent-orange to-claude-accent-blue rounded-lg p-8 mb-8 text-white">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold mb-4">⚡ CSA B149.1-25 Quick Reference</h2>
+          <p className="text-lg mb-6 opacity-90">
+            Instant access to key code sections, searchable by topic. Perfect for field work and studying.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+            <div className="bg-white/20 rounded-lg p-4">
+              <div className="font-semibold mb-1">📱 Mobile Friendly</div>
+              <div className="text-sm opacity-90">Access anywhere</div>
+            </div>
+            <div className="bg-white/20 rounded-lg p-4">
+              <div className="font-semibold mb-1">🔍 Smart Search</div>
+              <div className="text-sm opacity-90">Find sections fast</div>
+            </div>
+            <div className="bg-white/20 rounded-lg p-4">
+              <div className="font-semibold mb-1">📌 Bookmarks</div>
+              <div className="text-sm opacity-90">Save favorites</div>
+            </div>
+          </div>
+          <a 
+            href="/csa-reference" 
+            className="bg-white text-claude-accent-orange px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition inline-flex items-center space-x-2"
+          >
+            <span>📚</span>
+            <span>Launch Quick Reference</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
       {/* CSA B149.1-25 Field Tech Guide */}
       <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-8 mb-8">
         <h2 className="text-2xl font-bold text-claude-text-primary mb-4">📚 CSA B149.1-25 (8th Edition) Field Tech Guide</h2>
