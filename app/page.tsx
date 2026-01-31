@@ -15,6 +15,12 @@ export default function Home() {
       icon: '⚡',
     },
     {
+      title: 'Career Path Calculator',
+      description: 'Plan your HVAC career journey: certifications, salaries, employers, and job market insights',
+      href: '/career',
+      icon: '🚀',
+    },
+    {
       title: 'CSA Standards',
       description: 'Official CSA codes, updates, communities, and training resources',
       href: '/csa',
@@ -41,7 +47,7 @@ export default function Home() {
       </div>
 
       {/* Resource Cards */}
-      <div className="grid md:grid-cols-2 gap-6 mb-16">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         {resources.map((resource) => (
           <Link
             key={resource.href}
