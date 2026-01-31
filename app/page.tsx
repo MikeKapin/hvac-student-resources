@@ -35,9 +35,31 @@ export default function Home() {
         <h1 className="text-4xl md:text-5xl font-bold text-claude-accent-orange mb-4">
           HVAC Student Resources
         </h1>
-        <p className="text-xl text-claude-text-secondary max-w-3xl mx-auto">
+        <p className="text-xl text-claude-text-secondary max-w-3xl mx-auto mb-8">
           Free educational resources for Gas Technician students. Access study tools, official codes, regulations, and certification information.
         </p>
+        
+        {/* Featured Career Calculator CTA */}
+        <div className="bg-gradient-to-r from-claude-accent-orange to-claude-accent-blue rounded-lg p-8 max-w-4xl mx-auto mb-12">
+          <div className="text-white text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              🎯 Find Your Perfect HVAC Career Path
+            </h2>
+            <p className="text-lg mb-6 opacity-90">
+              Take our free assessment and get a personalized roadmap with certification requirements, timeline, and salary expectations.
+            </p>
+            <Link 
+              href="/career-calculator" 
+              className="bg-white text-claude-accent-orange px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition inline-flex items-center space-x-2"
+            >
+              <span>📊</span>
+              <span>Start Career Assessment</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
       </div>
 
       {/* Resource Cards */}
