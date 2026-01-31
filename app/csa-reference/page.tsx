@@ -157,13 +157,14 @@ export default function CSAReference() {
   if (showEmailGate) {
     return (
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-8 text-center">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 text-center">
           <div className="text-6xl mb-4">🔓</div>
-          <h2 className="text-2xl font-bold text-claude-text-primary mb-4">
-            Unlock Premium Features
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            Access Mike's Premium Study Tools
           </h2>
-          <p className="text-claude-text-secondary mb-6">
-            Get unlimited bookmarks, offline access, and exclusive HVAC study materials by entering your email.
+          <p className="text-gray-600 mb-6">
+            Get unlimited bookmarks, offline access, and exclusive HVAC study materials 
+            used by Mike's students at Fanshawe College.
           </p>
           
           <form onSubmit={handleEmailSubmit} className="space-y-4">
@@ -172,24 +173,24 @@ export default function CSAReference() {
               placeholder="your.email@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 border border-claude-border rounded-lg bg-claude-bg-primary text-claude-text-primary"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-800"
               required
             />
             <button
               type="submit"
-              className="w-full bg-claude-accent-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition"
+              className="w-full bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition"
             >
               Get Premium Access Free
             </button>
           </form>
           
-          <p className="text-xs text-claude-text-secondary mt-4">
-            Free forever. We'll only send you helpful HVAC content.
+          <p className="text-xs text-gray-500 mt-4">
+            Free forever. Mike will only send you helpful HVAC career content.
           </p>
           
           <button 
             onClick={() => setShowEmailGate(false)}
-            className="mt-4 text-claude-accent-blue hover:text-claude-accent-blue-hover transition"
+            className="mt-4 text-blue-600 hover:text-blue-800 transition"
           >
             ← Back to Reference
           </button>
@@ -202,14 +203,20 @@ export default function CSAReference() {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-claude-accent-orange mb-4">
+        <h1 className="text-4xl font-bold text-orange-600 mb-4">
           CSA B149.1-25 Quick Reference
         </h1>
-        <p className="text-xl text-claude-text-secondary max-w-3xl mx-auto">
+        <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
           Fast access to key sections of the Canadian Gas Code. Perfect for students, technicians, and installers.
         </p>
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto mb-4">
+          <p className="text-sm text-blue-800">
+            <span className="font-semibold">Created by Mike Kapin</span> - Gas Technician educator at Fanshawe College. 
+            G2/G3 certified professional with years of CSA code expertise.
+          </p>
+        </div>
         {accessLevel === 'premium' && (
-          <div className="inline-flex items-center space-x-2 mt-4 bg-claude-accent-orange/10 text-claude-accent-orange px-4 py-2 rounded-lg">
+          <div className="inline-flex items-center space-x-2 mt-4 bg-orange-100 text-orange-700 px-4 py-2 rounded-lg">
             <span>⭐</span>
             <span className="font-semibold">Premium Access Activated</span>
           </div>
@@ -217,10 +224,10 @@ export default function CSAReference() {
       </div>
 
       {/* Search and Filter Controls */}
-      <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-6 mb-8">
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-1">
-            <label className="block text-sm font-medium text-claude-text-primary mb-2">
+            <label className="block text-sm font-medium text-gray-800 mb-2">
               Search Sections
             </label>
             <input
@@ -228,18 +235,18 @@ export default function CSAReference() {
               placeholder="Search by title, content, or tags..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-3 py-2 border border-claude-border rounded-lg bg-claude-bg-primary text-claude-text-primary"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-800"
             />
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-claude-text-primary mb-2">
+            <label className="block text-sm font-medium text-gray-800 mb-2">
               Category
             </label>
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-3 py-2 border border-claude-border rounded-lg bg-claude-bg-primary text-claude-text-primary"
+              className="px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-800"
             >
               {categories.map(category => (
                 <option key={category.value} value={category.value}>
@@ -251,15 +258,15 @@ export default function CSAReference() {
         </div>
 
         {bookmarkedSections.length > 0 && (
-          <div className="mt-4 pt-4 border-t border-claude-border">
-            <p className="text-sm text-claude-text-primary mb-2">
+          <div className="mt-4 pt-4 border-t border-gray-300">
+            <p className="text-sm text-gray-800 mb-2">
               📌 Bookmarked: {bookmarkedSections.length} section(s)
             </p>
             <div className="flex flex-wrap gap-2">
               {bookmarkedSections.map(id => {
                 const section = codeSections.find(s => s.id === id);
                 return section ? (
-                  <span key={id} className="bg-claude-accent-orange/10 text-claude-accent-orange px-3 py-1 rounded-full text-sm">
+                  <span key={id} className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm">
                     {section.section}
                   </span>
                 ) : null;
@@ -274,22 +281,22 @@ export default function CSAReference() {
         {filteredSections.length === 0 ? (
           <div className="text-center py-12">
             <div className="text-4xl mb-4">🔍</div>
-            <p className="text-claude-text-secondary">No sections found matching your search.</p>
+            <p className="text-gray-600">No sections found matching your search.</p>
           </div>
         ) : (
           filteredSections.map((section) => (
-            <div key={section.id} className="bg-claude-bg-secondary border border-claude-border rounded-lg p-6">
+            <div key={section.id} className="bg-gray-50 border border-gray-200 rounded-lg p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <div className="flex items-center space-x-3 mb-2">
-                    <span className="bg-claude-accent-orange text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       Section {section.section}
                     </span>
-                    <h2 className="text-xl font-bold text-claude-text-primary">
+                    <h2 className="text-xl font-bold text-gray-800">
                       {section.title}
                     </h2>
                   </div>
-                  <p className="text-claude-text-secondary mb-4">
+                  <p className="text-gray-600 mb-4">
                     {section.summary}
                   </p>
                 </div>
@@ -298,8 +305,8 @@ export default function CSAReference() {
                   onClick={() => toggleBookmark(section.id)}
                   className={`ml-4 p-2 rounded-lg transition ${
                     bookmarkedSections.includes(section.id)
-                      ? 'bg-claude-accent-orange text-white'
-                      : 'bg-claude-bg-tertiary text-claude-text-secondary hover:text-claude-text-primary'
+                      ? 'bg-orange-600 text-white'
+                      : 'bg-gray-200 text-gray-500 hover:text-gray-700'
                   }`}
                   title={bookmarkedSections.includes(section.id) ? 'Remove bookmark' : 'Add bookmark'}
                 >
@@ -308,31 +315,31 @@ export default function CSAReference() {
               </div>
 
               <div className="space-y-3">
-                <h3 className="font-semibold text-claude-text-primary">Key Requirements:</h3>
+                <h3 className="font-semibold text-gray-800">Key Requirements:</h3>
                 <ul className="space-y-2">
                   {section.details.map((detail, index) => (
                     <li key={index} className="flex items-start space-x-3">
-                      <span className="text-claude-accent-orange text-sm mt-1">✓</span>
-                      <span className="text-claude-text-secondary">{detail}</span>
+                      <span className="text-orange-600 text-sm mt-1">✓</span>
+                      <span className="text-gray-600">{detail}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-claude-border">
+              <div className="mt-4 pt-4 border-t border-gray-300">
                 <div className="flex items-center justify-between">
                   <div className="flex flex-wrap gap-2">
                     {section.tags.map(tag => (
                       <span 
                         key={tag}
-                        className="bg-claude-bg-tertiary text-claude-text-secondary px-2 py-1 rounded text-sm"
+                        className="bg-gray-200 text-gray-600 px-2 py-1 rounded text-sm"
                       >
                         #{tag}
                       </span>
                     ))}
                   </div>
                   
-                  <span className="text-sm text-claude-text-tertiary">
+                  <span className="text-sm text-gray-500">
                     Category: {categories.find(c => c.value === section.category)?.label}
                   </span>
                 </div>
@@ -343,15 +350,16 @@ export default function CSAReference() {
       </div>
 
       {/* CTA Section */}
-      <div className="mt-16 bg-gradient-to-r from-claude-accent-orange to-claude-accent-blue rounded-lg p-8 text-white text-center">
-        <h3 className="text-2xl font-bold mb-4">Need More In-Depth Study Materials?</h3>
+      <div className="mt-16 bg-gradient-to-r from-orange-600 to-blue-600 rounded-lg p-8 text-white text-center">
+        <h3 className="text-2xl font-bold mb-4">Master the CSA Gas Code with Mike's Materials</h3>
         <p className="mb-6 opacity-90">
-          Master the CSA Gas Code with our comprehensive practice exams and study guides.
+          Access comprehensive practice exams and study guides used by Mike's students 
+          at Fanshawe College to pass their G2/G3 certifications.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link 
             href="/g2" 
-            className="bg-white text-claude-accent-orange px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+            className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
           >
             G2 Practice Exams
           </Link>
@@ -359,19 +367,26 @@ export default function CSAReference() {
             href="/career-calculator" 
             className="bg-white/20 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition"
           >
-            📊 Career Path Assessment
+            📊 HVAC Career Assessment
           </Link>
         </div>
       </div>
 
       {/* Disclaimer */}
-      <div className="mt-8 bg-claude-bg-secondary border border-claude-border rounded-lg p-6">
-        <h3 className="text-lg font-semibold text-claude-text-primary mb-3">⚠️ Important Disclaimer</h3>
-        <p className="text-claude-text-secondary text-sm leading-relaxed">
+      <div className="mt-8 bg-gray-50 border border-gray-200 rounded-lg p-6">
+        <h3 className="text-lg font-semibold text-gray-800 mb-3">⚠️ Important Disclaimer</h3>
+        <p className="text-gray-600 text-sm leading-relaxed mb-4">
           This quick reference is for educational purposes only. Always consult the official CSA B149.1-25 Gas Code 
           for complete and current requirements. Code sections may be updated or revised. This content is not a 
           substitute for proper training and certification.
         </p>
+        <div className="pt-4 border-t border-gray-300">
+          <p className="text-sm text-gray-700">
+            <span className="font-semibold">About the Creator:</span> Mike Kapin is a certified Gas Technician (G2/G3) 
+            and HVAC educator at Fanshawe College. He has trained hundreds of students in CSA code compliance 
+            and gas system safety across Ontario.
+          </p>
+        </div>
       </div>
     </div>
   );
