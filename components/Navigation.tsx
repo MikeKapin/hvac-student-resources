@@ -24,7 +24,7 @@ export default function Navigation() {
             <Link href="/tssa" className="text-brand-text-secondary hover:text-brand-text-primary hover:bg-brand-bg-tertiary px-3 py-2 rounded-md transition">
               TSSA
             </Link>
-            <Link href="/career-calculator" className="bg-brand-accent-orange text-white px-4 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition">
+            <Link href="/career" className="bg-brand-accent-orange text-white px-4 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition">
               🚀 Career Path
             </Link>
           </div>

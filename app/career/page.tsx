@@ -327,7 +327,7 @@ export default function Career() {
                       </div>
                       <div className="flex-1">
                         <h4 className="font-semibold text-claude-text-primary">{step.name}</h4>
-                        <p className="text-claude-text-secondary text-sm">
+                        <p className="text-claude-text-primary opacity-75 text-sm">
                           Estimated time: {step.timeNeeded} months | Salary range: {step.salary}
                         </p>
                       </div>
@@ -365,7 +365,7 @@ export default function Career() {
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-lg font-bold text-claude-text-primary">{employer.name}</h3>
-                      <p className="text-claude-text-secondary">{employer.location} • {employer.region}</p>
+                      <p className="text-claude-text-primary opacity-75">{employer.location} • {employer.region}</p>
                     </div>
                     <span className={`px-2 py-1 rounded text-sm font-medium ${
                       employer.hiring === 'High' ? 'bg-green-100 text-green-800' :
@@ -454,7 +454,7 @@ export default function Career() {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-semibold text-claude-text-primary mb-2">Factors That Increase Pay:</h4>
-                <ul className="list-disc list-inside space-y-1 text-claude-text-secondary">
+                <ul className="list-disc list-inside space-y-1 text-claude-text-primary opacity-80">
                   <li>Additional certifications (G2 + refrigeration)</li>
                   <li>Specialized skills (boilers, chillers, controls)</li>
                   <li>Emergency/on-call availability</li>
@@ -465,7 +465,7 @@ export default function Career() {
               </div>
               <div>
                 <h4 className="font-semibold text-claude-text-primary mb-2">Career Progression Tips:</h4>
-                <ul className="list-disc list-inside space-y-1 text-claude-text-secondary">
+                <ul className="list-disc list-inside space-y-1 text-claude-text-primary opacity-80">
                   <li>Start with residential to build experience</li>
                   <li>Move to commercial for higher pay</li>
                   <li>Specialize in high-demand areas</li>
@@ -670,7 +670,7 @@ export default function Career() {
                     <summary className="font-medium text-claude-text-primary cursor-pointer mb-2">
                       {qa.q}
                     </summary>
-                    <p className="text-claude-text-secondary text-sm pl-4 border-l-2 border-claude-accent-blue">
+                    <p className="text-claude-text-primary opacity-75 text-sm pl-4 border-l-2 border-claude-accent-blue">
                       {qa.a}
                     </p>
                   </details>
@@ -701,7 +701,7 @@ export default function Career() {
                 ].map((qa, index) => (
                   <div key={index} className="bg-white p-4 rounded border">
                     <h4 className="font-medium text-claude-text-primary mb-2">{qa.q}</h4>
-                    <p className="text-claude-text-secondary text-sm pl-4 border-l-2 border-claude-accent-orange">
+                    <p className="text-claude-text-primary opacity-75 text-sm pl-4 border-l-2 border-claude-accent-orange">
                       💡 {qa.tip}
                     </p>
                   </div>
@@ -715,7 +715,7 @@ export default function Career() {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-semibold text-claude-text-primary mb-2">Documents to Bring:</h4>
-                <ul className="list-disc list-inside space-y-1 text-claude-text-secondary text-sm">
+                <ul className="list-disc list-inside space-y-1 text-claude-text-primary opacity-80 text-sm">
                   <li>G2/G3 certification cards</li>
                   <li>Updated resume</li>
                   <li>References (3 professional)</li>
@@ -726,7 +726,7 @@ export default function Career() {
               </div>
               <div>
                 <h4 className="font-semibold text-claude-text-primary mb-2">Questions to Ask Them:</h4>
-                <ul className="list-disc list-inside space-y-1 text-claude-text-secondary text-sm">
+                <ul className="list-disc list-inside space-y-1 text-claude-text-primary opacity-80 text-sm">
                   <li>"What does a typical day look like?"</li>
                   <li>"What training opportunities are available?"</li>
                   <li>"How do you handle emergency calls?"</li>
@@ -747,7 +747,7 @@ export default function Career() {
           
           <div className="bg-claude-bg-secondary border border-claude-border rounded-lg p-6">
             <h3 className="text-xl font-bold text-claude-text-primary mb-4">📸 Work Documentation Template</h3>
-            <p className="text-claude-text-secondary mb-6">
+            <p className="text-claude-text-primary opacity-80 mb-6">
               Document your work to build a professional portfolio. Take before/after photos and keep detailed records.
             </p>
             
@@ -765,7 +765,7 @@ export default function Career() {
                   ].map((project, index) => (
                     <div key={index} className="bg-white p-3 rounded border">
                       <div className="font-medium text-claude-text-primary mb-1">{project}</div>
-                      <div className="text-xs text-claude-text-secondary grid grid-cols-3 gap-2">
+                      <div className="text-xs text-claude-text-primary opacity-70 grid grid-cols-3 gap-2">
                         <span>📅 Date: _____</span>
                         <span>⏱️ Time: _____</span>
                         <span>💰 Value: $_____</span>
@@ -788,7 +788,7 @@ export default function Career() {
                   ].map((service, index) => (
                     <div key={index} className="bg-white p-3 rounded border">
                       <div className="font-medium text-claude-text-primary mb-1">{service}</div>
-                      <div className="text-xs text-claude-text-secondary grid grid-cols-3 gap-2">
+                      <div className="text-xs text-claude-text-primary opacity-70 grid grid-cols-3 gap-2">
                         <span>📅 Date: _____</span>
                         <span>⏱️ Time: _____</span>
                         <span>🔧 Issue: _____</span>
