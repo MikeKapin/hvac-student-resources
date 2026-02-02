@@ -15,6 +15,12 @@ export default function Home() {
       icon: '⚡',
     },
     {
+      title: 'Quiz Generator',
+      description: 'Create custom quizzes from all 24 CSA units with PDF and HTML export options',
+      href: '/quiz',
+      icon: '📝',
+    },
+    {
       title: 'Career Path Calculator',
       description: 'Plan your HVAC career journey: certifications, salaries, employers, and job market insights',
       href: '/career',
