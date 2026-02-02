@@ -6,6 +6,7 @@ import {
   getRandomQuestions, 
   getQuestionCountByUnit,
   getTotalQuestionCount,
+  analyzeAnswerDistribution,
   Question 
 } from '@/lib/questionBank';
 
@@ -669,6 +670,44 @@ export default function QuizGenerator() {
                     </span>
                   </div>
                 </div>
+
+                {/* Answer Distribution Analysis */}
+                {(() => {
+                  const analysis = analyzeAnswerDistribution(generatedQuiz);
+                  return (
+                    <div className="bg-brand-bg-tertiary rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <p className="font-semibold text-brand-text-primary text-sm">📊 Answer Distribution</p>
+                        <span className={`text-xs px-2 py-1 rounded ${
+                          analysis.isBalanced 
+                            ? 'bg-green-500/20 text-green-400' 
+                            : 'bg-yellow-500/20 text-yellow-400'
+                        }`}>
+                          {analysis.isBalanced ? '✓ Balanced' : '⚠ Check Balance'} ({analysis.balanceScore}/100)
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-4 gap-1 text-xs">
+                        {analysis.distribution.map(({ answer, count, percentage }) => (
+                          <div key={answer} className="text-center">
+                            <div className={`rounded px-1 py-1 ${
+                              percentage >= 15 && percentage <= 35
+                                ? 'bg-green-500/20 text-green-400'
+                                : 'bg-yellow-500/20 text-yellow-400'
+                            }`}>
+                              <div className="font-bold">{answer}</div>
+                              <div>{count} ({percentage}%)</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      {!analysis.isBalanced && (
+                        <p className="text-xs text-brand-text-tertiary mt-2">
+                          💡 Tip: Try generating again for better balance, or increase question count
+                        </p>
+                      )}
+                    </div>
+                  );
+                })()}
 
                 {/* Export Buttons */}
                 <div className="space-y-2">

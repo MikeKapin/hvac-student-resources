@@ -3514,7 +3514,7 @@ export function getQuestionsByDifficulty(difficulty: 'basic' | 'intermediate' | 
   return questionBank.filter(q => q.difficulty === difficulty);
 }
 
-// Function to get random questions
+// Function to get random questions with balanced answer distribution
 export function getRandomQuestions(count: number, unitNumbers?: number[], difficulty?: 'basic' | 'intermediate' | 'advanced'): Question[] {
   let filtered = [...questionBank];
   
@@ -3526,13 +3526,114 @@ export function getRandomQuestions(count: number, unitNumbers?: number[], diffic
     filtered = filtered.filter(q => q.difficulty === difficulty);
   }
   
-  // Shuffle using Fisher-Yates algorithm
+  // If we need fewer questions than available, use balanced selection
+  if (count < filtered.length) {
+    return getBalancedQuestions(filtered, count);
+  }
+  
+  // If we need all or more questions than available, just shuffle and return
   for (let i = filtered.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
   }
   
   return filtered.slice(0, Math.min(count, filtered.length));
+}
+
+// Helper function to select questions with balanced answer distribution
+function getBalancedQuestions(questions: Question[], count: number): Question[] {
+  // Group questions by their correct answer (0=A, 1=B, 2=C, 3=D)
+  const questionsByAnswer: Question[][] = [[], [], [], []];
+  
+  questions.forEach(question => {
+    if (question.correct >= 0 && question.correct <= 3) {
+      questionsByAnswer[question.correct].push(question);
+    }
+  });
+  
+  // Shuffle each group independently to avoid bias
+  questionsByAnswer.forEach(group => {
+    for (let i = group.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [group[i], group[j]] = [group[j], group[i]];
+    }
+  });
+  
+  const result: Question[] = [];
+  
+  // IMPROVED BALANCING ALGORITHM
+  // Calculate ideal distribution (try to get as close to 25% each as possible)
+  const idealPerAnswer = count / 4;
+  const minPerAnswer = Math.floor(idealPerAnswer);
+  const maxPerAnswer = Math.ceil(idealPerAnswer);
+  
+  // Count how many answer choices have enough questions
+  const answerChoicesWithQuestions = questionsByAnswer.filter(group => group.length > 0).length;
+  
+  if (answerChoicesWithQuestions === 0) return []; // Safety check
+  
+  // Phase 1: Ensure minimum distribution
+  const phase1Targets: number[] = [];
+  let totalPhase1 = 0;
+  
+  for (let i = 0; i < 4; i++) {
+    const available = questionsByAnswer[i].length;
+    const target = Math.min(minPerAnswer, available);
+    phase1Targets[i] = target;
+    totalPhase1 += target;
+    result.push(...questionsByAnswer[i].slice(0, target));
+  }
+  
+  // Phase 2: Distribute remaining slots more fairly
+  const remaining = count - totalPhase1;
+  if (remaining > 0) {
+    // Create a priority list of answer choices that can accept more questions
+    const expandableChoices: Array<{index: number, capacity: number, current: number}> = [];
+    
+    for (let i = 0; i < 4; i++) {
+      const current = phase1Targets[i];
+      const capacity = questionsByAnswer[i].length - current;
+      const currentRatio = result.filter(q => q.correct === i).length / count;
+      const targetRatio = 0.25; // 25% target
+      
+      if (capacity > 0) {
+        // Prioritize answer choices that are below target ratio
+        expandableChoices.push({
+          index: i,
+          capacity,
+          current: current + (targetRatio - currentRatio) * 100 // bias toward balancing
+        });
+      }
+    }
+    
+    // Sort by priority (those furthest from 25% get priority)
+    expandableChoices.sort((a, b) => a.current - b.current);
+    
+    // Distribute remaining questions
+    let remainingToDistribute = remaining;
+    let choiceIndex = 0;
+    
+    while (remainingToDistribute > 0 && choiceIndex < expandableChoices.length) {
+      const choice = expandableChoices[choiceIndex];
+      const canTake = Math.min(remainingToDistribute, choice.capacity);
+      
+      if (canTake > 0) {
+        const startIndex = phase1Targets[choice.index];
+        result.push(...questionsByAnswer[choice.index].slice(startIndex, startIndex + canTake));
+        remainingToDistribute -= canTake;
+      }
+      
+      choiceIndex = (choiceIndex + 1) % expandableChoices.length;
+    }
+  }
+  
+  // Final shuffle to randomize question order while preserving balance
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  
+  return result.slice(0, count); // Safety: ensure exact count
 }
 
 // Get count of questions per unit
@@ -3547,4 +3648,41 @@ export function getQuestionCountByUnit(): Record<number, number> {
 // Get total question count
 export function getTotalQuestionCount(): number {
   return questionBank.length;
+}
+
+// Analyze answer distribution in a set of questions
+export function analyzeAnswerDistribution(questions: Question[]): {
+  total: number;
+  distribution: { answer: string; count: number; percentage: number }[];
+  isBalanced: boolean;
+  balanceScore: number; // 0-100, 100 = perfectly balanced
+} {
+  if (questions.length === 0) {
+    return { total: 0, distribution: [], isBalanced: true, balanceScore: 100 };
+  }
+  
+  const counts = [0, 0, 0, 0]; // A, B, C, D
+  questions.forEach(q => {
+    if (q.correct >= 0 && q.correct <= 3) {
+      counts[q.correct]++;
+    }
+  });
+  
+  const total = questions.length;
+  const distribution = counts.map((count, index) => ({
+    answer: String.fromCharCode(65 + index), // A, B, C, D
+    count,
+    percentage: total > 0 ? Math.round((count / total) * 100) : 0
+  }));
+  
+  // Calculate balance score (how close to 25% each)
+  const ideal = 25; // 25% for each answer
+  const deviations = distribution.map(d => Math.abs(d.percentage - ideal));
+  const totalDeviation = deviations.reduce((sum, dev) => sum + dev, 0);
+  const balanceScore = Math.max(0, 100 - totalDeviation);
+  
+  // Consider "balanced" if each answer is within 10% of ideal (15%-35% range)
+  const isBalanced = deviations.every(dev => dev <= 10);
+  
+  return { total, distribution, isBalanced, balanceScore };
 }

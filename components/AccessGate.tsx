@@ -28,7 +28,7 @@ export default function AccessGate({ onAccessGranted }: AccessGateProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-dark-bg via-brand-dark-secondary to-brand-dark-bg flex items-center justify-center px-4">
+    <div data-theme="dark" className="min-h-screen bg-gradient-to-br from-brand-dark-bg via-brand-dark-secondary to-brand-dark-bg flex items-center justify-center px-4">
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">

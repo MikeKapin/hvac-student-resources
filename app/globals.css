@@ -1,6 +1,24 @@
 @import "tailwindcss";
 
 :root {
+  /* Light theme - aligned with Tailwind brand colors */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F9FA;
+  --bg-tertiary: #E9ECEF;
+  --bg-hover: #F1F3F4;
+  --text-primary: #212529;
+  --text-secondary: #6C757D;
+  --text-tertiary: #ADB5BD;
+  --accent-orange: #FF8500;
+  --accent-orange-hover: #E6730E;
+  --accent-blue: #0066CC;
+  --accent-blue-hover: #0052A3;
+  --border-default: #DEE2E6;
+  --border-light: #E9ECEF;
+}
+
+/* Dark mode for access gate component */
+[data-theme="dark"] {
   --bg-primary: #1F1F1F;
   --bg-secondary: #2A2A2A;
   --bg-tertiary: #343434;
