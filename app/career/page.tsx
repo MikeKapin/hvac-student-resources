@@ -186,12 +186,12 @@ export default function Career() {
             onClick={() => setActiveTab(tab.id)}
             className={`px-4 py-2 rounded-t-lg transition-colors ${
               activeTab === tab.id
-                ? 'bg-claude-accent-orange text-white border-b-2 border-claude-accent-orange'
+                ? 'bg-claude-accent-orange !text-white border-b-2 border-claude-accent-orange font-semibold'
                 : 'bg-claude-bg-secondary text-claude-text-secondary hover:bg-claude-bg-hover'
             }`}
           >
             <span className="mr-2">{tab.icon}</span>
-            {tab.name}
+            <span>{tab.name}</span>
           </button>
         ))}
       </div>
