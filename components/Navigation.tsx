@@ -15,6 +15,9 @@ export default function Navigation() {
             <Link href="/g3" className="text-brand-text-secondary hover:text-brand-text-primary hover:bg-brand-bg-tertiary px-3 py-2 rounded-md transition">
               G3 Resources
             </Link>
+            <Link href="/quiz" className="text-brand-accent-orange hover:text-brand-accent-orange-hover px-3 py-2 rounded-md transition font-medium">
+              📝 Quiz Generator
+            </Link>
             <Link href="/csa" className="text-brand-text-secondary hover:text-brand-text-primary hover:bg-brand-bg-tertiary px-3 py-2 rounded-md transition">
               CSA
             </Link>
