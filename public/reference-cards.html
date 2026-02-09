@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSA B149.1-25 Quick Reference Cards - All 24 Units</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #0066cc;
+            --accent: #ff6600;
+            --g3-color: #2e7d32;
+            --g2-color: #1565c0;
+            --safety-red: #c62828;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .controls {
+            background: white;
+            padding: 1rem 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .controls button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .btn-print {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .btn-filter {
+            background: #e0e0e0;
+        }
+        
+        .btn-filter.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        .card-header {
+            padding: 1rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .card.g3 .card-header {
+            background: linear-gradient(135deg, var(--g3-color), #43a047);
+        }
+        
+        .card.g2 .card-header {
+            background: linear-gradient(135deg, var(--g2-color), #1976d2);
+        }
+        
+        .card-header h2 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .card-header .unit-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .card-body {
+            padding: 1rem;
+        }
+        
+        .card-section {
+            margin-bottom: 1rem;
+        }
+        
+        .card-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .card-section h3 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.25rem;
+        }
+        
+        .card-section ul {
+            list-style: none;
+            font-size: 0.85rem;
+        }
+        
+        .card-section li {
+            padding: 0.2rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+        
+        .card-section li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+        
+        .formula-box {
+            background: #f8f9fa;
+            border-left: 3px solid var(--secondary);
+            padding: 0.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            margin: 0.25rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .safety-box {
+            background: #ffebee;
+            border-left: 3px solid var(--safety-red);
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            margin: 0.25rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .code-ref {
+            display: inline-block;
+            background: #e3f2fd;
+            color: var(--secondary);
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background: #333;
+            color: #999;
+            font-size: 0.85rem;
+        }
+        
+        .footer a {
+            color: #66b3ff;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .header, .controls, .footer {
+                display: none;
+            }
+            
+            .cards-container {
+                display: block;
+                padding: 0;
+            }
+            
+            .card {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 1rem;
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+            
+            @page {
+                size: letter;
+                margin: 0.5in;
+            }
+        }
+        
+        /* Pocket card print mode */
+        @media print and (max-width: 5in) {
+            .card {
+                width: 3.5in;
+                height: 5in;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔧 CSA B149.1-25 Quick Reference Cards</h1>
+        <p>Gas Technician Study Cards - All 24 Units (8th Edition)</p>
+    </div>
+    
+    <div class="controls">
+        <button class="btn-print" onclick="window.print()">🖨️ Print All Cards</button>
+        <button class="btn-filter active" data-filter="all">All Units</button>
+        <button class="btn-filter" data-filter="g3">G3 Only (Units 1-9)</button>
+        <button class="btn-filter" data-filter="g2">G2 Only (Units 10-24)</button>
+    </div>
+    
+    <div class="cards-container">
+        
+        <!-- UNIT 1: Safety -->
+        <div class="card g3" data-unit="1">
+            <div class="card-header">
+                <h2>Unit 1: Safety</h2>
+                <span class="unit-badge">G3</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Key Concepts</h3>
+                    <ul>
+                        <li>Personal Protective Equipment (PPE)</li>
+                        <li>Lockout/Tagout procedures (LOTO)</li>
+                        <li>WHMIS 2015 symbols & SDS sheets</li>
+                        <li>Fire extinguisher types (A, B, C, D)</li>
+                        <li>Confined space entry requirements</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>⚠️ Critical Safety</h3>
+                    <div class="safety-box">
+                        LEL (Lower Explosive Limit): Natural Gas = 5%<br>
+                        UEL (Upper Explosive Limit): Natural Gas = 15%<br>
+                        Always test for gas before entering confined spaces
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>📋 Code References</h3>
+                    <span class="code-ref">CSA B149.1 Sec 4</span>
+                    <span class="code-ref">OHSA Regs</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 2: Fasteners, Tools and Testing Equipment -->
+        <div class="card g3" data-unit="2">
+            <div class="card-header">
+                <h2>Unit 2: Fasteners, Tools & Testing</h2>
+                <span class="unit-badge">G3</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Key Concepts</h3>
+                    <ul>
+                        <li>Thread types: NPT, NPS, metric</li>
+                        <li>Pipe wrenches, tubing cutters, flaring tools</li>
+                        <li>Manometers (U-tube, inclined, digital)</li>
+                        <li>Combustion analyzers</li>
+                        <li>Electronic leak detectors</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Key Measurements</h3>
+                    <div class="formula-box">
+                        1 inch w.c. = 0.0361 psi = 249 Pa<br>
+                        1 psi = 27.7 inches w.c. = 6.895 kPa
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>📋 Code References</h3>
+                    <span class="code-ref">CSA B149.1-25 Sec 6</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 3: Properties of Natural Gas -->
+        <div class="card g3" data-unit="3">
+            <div class="card-header">
+                <h2>Unit 3: Gas Properties & Safe Handling</h2>
+                <span class="unit-badge">G3</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Specific Gravity</h3>
+                    <ul>
+                        <li>Natural Gas: <strong>0.55</strong> (lighter than air)</li>
+                        <li>Air: <strong>1.0</strong> (reference)</li>
+                        <li>Propane: <strong>1.52</strong> (heavier than air)</li>
+                        <li>Butane: <strong>1.95</strong> (heaviest)</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>🔥 Calorific Values</h3>
+                    <div class="formula-box">
+                        Natural Gas: 1000 Btu/ft³ (37.5 MJ/m³)<br>
+                        Propane: 2,500 Btu/ft³ (93.2 MJ/m³)
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Key Formulas</h3>
+                    <div class="formula-box">
+                        LP Container Fill: Max 80% capacity<br>
+                        Expansion: NG 1:600, Propane 1:270<br>
+                        Boiling Point: NG -162°C, Propane -42°C
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 4: Codes and Regulations -->
+        <div class="card g3" data-unit="4">
+            <div class="card-header">
+                <h2>Unit 4: Codes, Acts & Regulations</h2>
+                <span class="unit-badge">G3</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Key Documents</h3>
+                    <ul>
+                        <li><strong>CSA B149.1-25</strong> - Natural Gas & Propane Installation Code</li>
+                        <li><strong>CSA B149.2-25</strong> - Propane Storage & Handling</li>
+                        <li><strong>TSSA Act</strong> - Technical Standards & Safety</li>
+                        <li><strong>O.Reg 212/01</strong> - Gaseous Fuels</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📋 TSSA Licensing</h3>
+                    <ul>
+                        <li><strong>G3</strong> - Gas Technician 3 (entry level)</li>
+                        <li><strong>G2</strong> - Gas Technician 2 (journeyperson)</li>
+                        <li><strong>G1</strong> - Gas Technician 1 (contractor)</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>⚠️ Remember</h3>
+                    <div class="safety-box">
+                        Code = Minimum standard, not best practice<br>
+                        AHJ = Authority Having Jurisdiction (TSSA in ON)
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 5: Introduction to Electricity -->
+        <div class="card g3" data-unit="5">
+            <div class="card-header">
+                <h2>Unit 5: Introduction to Electricity</h2>
+                <span class="unit-badge">G3</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>📐 Ohm's Law</h3>
+                    <div class="formula-box">
+                        V = I × R (Voltage = Current × Resistance)<br>
+                        I = V / R<br>
+                        R = V / I
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>⚡ Power Formulas</h3>
+                    <div class="formula-box">
+                        P = V × I (Watts = Volts × Amps)<br>
+                        P = I² × R<br>
+                        P = V² / R
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>🎯 Key Values</h3>
+                    <ul>
+                        <li>Safety control circuits: Max <strong>120V</strong></li>
+                        <li>24V transformer common for thermostats</li>
+                        <li>1 mA = threshold of perception</li>
+                        <li>100 mA = potentially lethal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 6: Technical Manuals -->
+        <div class="card g3" data-unit="6">
+            <div class="card-header">
+                <h2>Unit 6: Technical Manuals & Drawings</h2>
+                <span class="unit-badge">G3</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Key Concepts</h3>
+                    <ul>
+                        <li>I&O Manuals (Installation & Operation)</li>
+                        <li>Nameplate data interpretation</li>
+                        <li>Wiring diagrams: schematic vs ladder</li>
+                        <li>Isometric piping drawings</li>
+                        <li>Gas appliance rating plates</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📋 Nameplate Data</h3>
+                    <ul>
+                        <li>Input rating (Btu/h or kW)</li>
+                        <li>Gas type (NG or LP)</li>
+                        <li>Manifold pressure</li>
+                        <li>Certification marks (CSA, ULC)</li>
+                        <li>Model & serial numbers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 7: Customer Relations -->
+        <div class="card g3" data-unit="7">
+            <div class="card-header">
+                <h2>Unit 7: Customer Relations</h2>
+                <span class="unit-badge">G3</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Key Concepts</h3>
+                    <ul>
+                        <li>Professional communication</li>
+                        <li>Work order documentation</li>
+                        <li>Customer education on equipment</li>
+                        <li>Safety explanations</li>
+                        <li>Warranty information</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📋 Best Practices</h3>
+                    <ul>
+                        <li>Explain work before starting</li>
+                        <li>Clean up work area</li>
+                        <li>Document all findings</li>
+                        <li>Provide written instructions</li>
+                        <li>Follow up on concerns</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 8: Piping and Tubing Systems -->
+        <div class="card g3" data-unit="8">
+            <div class="card-header">
+                <h2>Unit 8: Piping & Tubing Systems</h2>
+                <span class="unit-badge">G3</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Pipe Types</h3>
+                    <ul>
+                        <li>Steel pipe (Schedule 40 common)</li>
+                        <li>CSST (Corrugated Stainless Steel Tubing)</li>
+                        <li>Copper tubing (Type K, L)</li>
+                        <li>PE pipe (underground only)</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Joint Sealants</h3>
+                    <div class="formula-box">
+                        Apply to MALE threads only<br>
+                        Leave first 2 threads FREE<br>
+                        Teflon tape: clockwise, 50% overlap<br>
+                        Must be "Approved for Gas"
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>📋 Code References</h3>
+                    <span class="code-ref">CSA B149.1-25 Sec 6</span>
+                    <span class="code-ref">CAN/CGA-8.1</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 9: Introduction to Gas Appliances -->
+        <div class="card g3" data-unit="9">
+            <div class="card-header">
+                <h2>Unit 9: Intro to Gas Appliances</h2>
+                <span class="unit-badge">G3</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Appliance Categories</h3>
+                    <ul>
+                        <li><strong>Category I</strong> - Non-condensing, negative vent</li>
+                        <li><strong>Category II</strong> - Condensing, negative vent</li>
+                        <li><strong>Category III</strong> - Non-condensing, positive vent</li>
+                        <li><strong>Category IV</strong> - Condensing, positive vent</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>🔥 Combustion Air</h3>
+                    <div class="formula-box">
+                        30 ft³ air per 1000 Btu/h input<br>
+                        (0.84 m³ per kW)
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>📋 Code References</h3>
+                    <span class="code-ref">CSA B149.1-25 Sec 7</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 10: Advanced Piping Systems -->
+        <div class="card g2" data-unit="10">
+            <div class="card-header">
+                <h2>Unit 10: Advanced Piping Systems</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>📐 Pipe Sizing Formula</h3>
+                    <div class="formula-box">
+                        Q = 2313 × D^2.623 × √(ΔP/L×SG)<br>
+                        Q = flow (ft³/h)<br>
+                        D = inside diameter (in)<br>
+                        ΔP = pressure drop (in w.c.)<br>
+                        L = pipe length (ft)<br>
+                        SG = specific gravity
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>🎯 Key Concepts</h3>
+                    <ul>
+                        <li>Equivalent length of fittings</li>
+                        <li>Longest run method</li>
+                        <li>Branch sizing</li>
+                        <li>Pressure testing: 3 psig for 10 min</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📋 Code References</h3>
+                    <span class="code-ref">CSA B149.1-25 Sec 6</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 11: Pressure Regulators -->
+        <div class="card g2" data-unit="11">
+            <div class="card-header">
+                <h2>Unit 11: Pressure Regulators</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Regulator Types</h3>
+                    <ul>
+                        <li><strong>Service regulator</strong> - Utility to building</li>
+                        <li><strong>Line regulator</strong> - 2 psig to 7" w.c.</li>
+                        <li><strong>Appliance regulator</strong> - Final stage</li>
+                        <li><strong>Two-stage</strong> - LP gas systems</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Standard Pressures</h3>
+                    <div class="formula-box">
+                        NG Manifold: 3.5" w.c. (0.87 kPa)<br>
+                        LP Manifold: 10-11" w.c. (2.5-2.7 kPa)<br>
+                        2 PSI System: Max 2 psig supply
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Flow Rate w/ Pressure Correction</h3>
+                    <div class="formula-box">
+                        Q = Q_meter × (Pa + Pg) / 14.73
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 12: Electricity for Gas Equipment -->
+        <div class="card g2" data-unit="12">
+            <div class="card-header">
+                <h2>Unit 12: Electricity for Gas Equipment</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Key Components</h3>
+                    <ul>
+                        <li>Transformers (step-down to 24V)</li>
+                        <li>Relays and contactors</li>
+                        <li>Limit controls</li>
+                        <li>Flame safeguard controls</li>
+                        <li>Ignition systems</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Troubleshooting</h3>
+                    <div class="formula-box">
+                        Transformer output: 24-28 VAC<br>
+                        Thermostat R to W: 24V when calling<br>
+                        Check voltage drop across loads
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>⚠️ Safety</h3>
+                    <div class="safety-box">
+                        Always verify power OFF before service<br>
+                        Use meter to confirm 0V
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 13: Controls -->
+        <div class="card g2" data-unit="13">
+            <div class="card-header">
+                <h2>Unit 13: Controls</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Control Types</h3>
+                    <ul>
+                        <li><strong>Operating controls</strong> - Thermostat, aquastat</li>
+                        <li><strong>Safety controls</strong> - High limit, rollout</li>
+                        <li><strong>Proving controls</strong> - Flame sensor, airflow</li>
+                        <li><strong>Ignition controls</strong> - HSI, DSI, pilot</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>🔥 Flame Sensing</h3>
+                    <div class="formula-box">
+                        Flame rectification: 0.5-10 µA (microamps)<br>
+                        Thermocouple: 25-35 mV<br>
+                        Thermopile: 500-750 mV
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>📋 Code References</h3>
+                    <span class="code-ref">CSA B149.1-25 Sec 5</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 14: Building as a System -->
+        <div class="card g2" data-unit="14">
+            <div class="card-header">
+                <h2>Unit 14: Building as a System</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Key Concepts</h3>
+                    <ul>
+                        <li>Stack effect in buildings</li>
+                        <li>Neutral pressure plane</li>
+                        <li>Combustion air requirements</li>
+                        <li>Makeup air for exhaust</li>
+                        <li>Depressurization effects</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Critical Limit</h3>
+                    <div class="formula-box">
+                        Max negative pressure: -5 Pa (-0.02" w.c.)<br>
+                        Beyond this = spillage risk
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>⚠️ Spillage Test</h3>
+                    <div class="safety-box">
+                        Test with all exhaust fans ON<br>
+                        Check draft at diverter with smoke/mirror
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 15: Domestic Appliances -->
+        <div class="card g2" data-unit="15">
+            <div class="card-header">
+                <h2>Unit 15: Domestic Appliances</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Appliance Types</h3>
+                    <ul>
+                        <li>Ranges and cooktops</li>
+                        <li>Clothes dryers</li>
+                        <li>Barbecues (outdoor)</li>
+                        <li>Decorative appliances</li>
+                        <li>Gas fireplaces</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Dryer Requirements</h3>
+                    <div class="formula-box">
+                        Max duct length: Per manufacturer<br>
+                        Deduct for elbows: 5 ft per 90°<br>
+                        Termination: Backdraft damper required
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>📋 Code References</h3>
+                    <span class="code-ref">CSA B149.1-25 Sec 7</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 16: Gas Fired Refrigerators -->
+        <div class="card g2" data-unit="16">
+            <div class="card-header">
+                <h2>Unit 16: Gas Fired Refrigerators</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Key Concepts</h3>
+                    <ul>
+                        <li>Absorption refrigeration cycle</li>
+                        <li>Ammonia-water system</li>
+                        <li>Generator/boiler operation</li>
+                        <li>No moving parts (silent)</li>
+                        <li>RV and off-grid applications</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Operating Principles</h3>
+                    <div class="formula-box">
+                        Heat source → evaporates ammonia<br>
+                        Ammonia vapor → condenses (releases heat)<br>
+                        Liquid ammonia → evaporates (absorbs heat)
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>⚠️ Safety</h3>
+                    <div class="safety-box">
+                        Ammonia leak = strong odor, toxic<br>
+                        Level installation critical
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 17: Conversion Burners -->
+        <div class="card g2" data-unit="17">
+            <div class="card-header">
+                <h2>Unit 17: Conversion Burners</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Key Concepts</h3>
+                    <ul>
+                        <li>Oil-to-gas conversions</li>
+                        <li>Power burner applications</li>
+                        <li>Combustion chamber sizing</li>
+                        <li>Air/fuel ratio adjustment</li>
+                        <li>CO and efficiency testing</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Combustion Analysis</h3>
+                    <div class="formula-box">
+                        CO air-free: Max 400 ppm<br>
+                        O2: 4-9% typical<br>
+                        CO2: 8-10% for NG
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>📋 Code References</h3>
+                    <span class="code-ref">CSA B149.1-25 Sec 7</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 18: Water Heaters -->
+        <div class="card g2" data-unit="18">
+            <div class="card-header">
+                <h2>Unit 18: Water Heaters & Combo Systems</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Types</h3>
+                    <ul>
+                        <li>Atmospheric (natural draft)</li>
+                        <li>Power vent (fan-assisted)</li>
+                        <li>Direct vent (sealed combustion)</li>
+                        <li>Tankless (on-demand)</li>
+                        <li>Combination (heat + DHW)</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Sizing Formula</h3>
+                    <div class="formula-box">
+                        GPH = Btu/h ÷ (8.33 × ΔT)<br>
+                        First Hour Rating for tank sizing<br>
+                        T&P Valve: Required on all units
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>⚠️ Safety</h3>
+                    <div class="safety-box">
+                        Max water temp: 140°F (60°C) at tap<br>
+                        T&P discharge: 6" from floor
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 19: Forced Warm Air Systems -->
+        <div class="card g2" data-unit="19">
+            <div class="card-header">
+                <h2>Unit 19: Forced Warm Air Systems</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Furnace Types</h3>
+                    <ul>
+                        <li><strong>80% AFUE</strong> - Non-condensing</li>
+                        <li><strong>90%+ AFUE</strong> - Condensing</li>
+                        <li>Upflow, downflow, horizontal</li>
+                        <li>Single-stage, two-stage, modulating</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Temperature Rise</h3>
+                    <div class="formula-box">
+                        Temp Rise = Supply - Return<br>
+                        Typical: 40-70°F rise<br>
+                        Check nameplate for range
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>📋 Code References</h3>
+                    <span class="code-ref">CSA B149.1-25 Sec 7</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 20: Hydronic Heating Systems -->
+        <div class="card g2" data-unit="20">
+            <div class="card-header">
+                <h2>Unit 20: Hydronic Heating Systems</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 System Types</h3>
+                    <ul>
+                        <li>Series loop (one pipe)</li>
+                        <li>Two-pipe direct return</li>
+                        <li>Two-pipe reverse return</li>
+                        <li>Radiant floor heating</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Key Formulas</h3>
+                    <div class="formula-box">
+                        Btu/h = GPM × 500 × ΔT<br>
+                        (500 = 8.33 lb/gal × 60 min)<br>
+                        Expansion tank sizing critical
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>⚠️ Safety</h3>
+                    <div class="safety-box">
+                        ASME relief valve required<br>
+                        Low water cutoff on steam
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 21: Space Heaters and Fireplaces -->
+        <div class="card g2" data-unit="21">
+            <div class="card-header">
+                <h2>Unit 21: Space Heaters & Fireplaces</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Types</h3>
+                    <ul>
+                        <li>Vented room heaters</li>
+                        <li>Unvented/vent-free (restrictions apply)</li>
+                        <li>Direct vent fireplaces</li>
+                        <li>B-vent fireplaces</li>
+                        <li>Gas log sets</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Clearances</h3>
+                    <div class="formula-box">
+                        Follow manufacturer specs<br>
+                        Combustibles clearance critical<br>
+                        Floor protection may be required
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>📋 Code References</h3>
+                    <span class="code-ref">CSA B149.1-25 Sec 7</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 22: Venting Systems -->
+        <div class="card g2" data-unit="22">
+            <div class="card-header">
+                <h2>Unit 22: Venting Systems</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Vent Types</h3>
+                    <ul>
+                        <li><strong>Type B</strong> - Double-wall, natural draft</li>
+                        <li><strong>Type BW</strong> - Wall furnace vent</li>
+                        <li><strong>Type L</strong> - Oil/special gas</li>
+                        <li><strong>PVC/CPVC</strong> - Condensing appliances</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Draft Formula (Imperial)</h3>
+                    <div class="formula-box">
+                        D = 7.6 × H × (1/Ta - 1/Ts)<br>
+                        D = draft (in w.c.)<br>
+                        H = height (ft)<br>
+                        Ta = outdoor temp (°R)<br>
+                        Ts = stack temp (°R)
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>⚠️ Critical</h3>
+                    <div class="safety-box">
+                        -0.02" w.c. = spillage risk<br>
+                        Test draft with all exhausts ON
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 23: Forced Air Add-Ons -->
+        <div class="card g2" data-unit="23">
+            <div class="card-header">
+                <h2>Unit 23: Forced Air Add-On Devices</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Add-On Types</h3>
+                    <ul>
+                        <li>Humidifiers (bypass, fan-powered)</li>
+                        <li>Electronic air cleaners</li>
+                        <li>UV germicidal lights</li>
+                        <li>Zoning systems</li>
+                        <li>HRV/ERV integration</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Humidifier Sizing</h3>
+                    <div class="formula-box">
+                        GPD based on house volume<br>
+                        Tight homes = less capacity<br>
+                        Target: 30-50% RH
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>📋 Code References</h3>
+                    <span class="code-ref">CSA B149.1-25 Sec 7</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- UNIT 24: Air Handling -->
+        <div class="card g2" data-unit="24">
+            <div class="card-header">
+                <h2>Unit 24: Air Handling</h2>
+                <span class="unit-badge">G2</span>
+            </div>
+            <div class="card-body">
+                <div class="card-section">
+                    <h3>🎯 Key Concepts</h3>
+                    <ul>
+                        <li>CFM calculations</li>
+                        <li>Static pressure measurement</li>
+                        <li>Duct sizing methods</li>
+                        <li>Air balancing</li>
+                        <li>Filter selection</li>
+                    </ul>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Airflow Formula</h3>
+                    <div class="formula-box">
+                        CFM = Btu/h ÷ (1.08 × ΔT)<br>
+                        1.08 = air constant<br>
+                        ΔT = temperature rise
+                    </div>
+                </div>
+                <div class="card-section">
+                    <h3>📐 Static Pressure</h3>
+                    <div class="formula-box">
+                        Total ESP = Supply + Return<br>
+                        Typical: 0.5" w.c. max<br>
+                        Check vs blower chart
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="footer">
+        <p>© 2026 Mike Kapin | Personal Professional Educational Resources</p>
+        <p>Based on CSA B149.1-25 (8th Edition) | For study purposes only</p>
+        <p>Visit: <a href="https://hvac-student-resources.netlify.app">hvac-student-resources.netlify.app</a></p>
+    </div>
+    
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.btn-filter').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active state
+                document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.dataset.filter;
+                const cards = document.querySelectorAll('.card');
+                
+                cards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else if (filter === 'g3' && card.classList.contains('g3')) {
+                        card.style.display = 'block';
+                    } else if (filter === 'g2' && card.classList.contains('g2')) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
