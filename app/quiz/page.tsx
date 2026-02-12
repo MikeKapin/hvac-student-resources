@@ -599,10 +599,10 @@ export default function QuizGenerator() {
                   onChange={(e) => setDifficulty(e.target.value as 'all' | 'basic' | 'intermediate' | 'advanced')}
                   className="w-full bg-brand-bg-tertiary border border-brand-border rounded-lg px-4 py-3 text-brand-text-primary focus:outline-none focus:border-brand-accent-orange"
                 >
-                  <option value="all">All Difficulties</option>
-                  <option value="basic">Basic Only</option>
-                  <option value="intermediate">Intermediate Only</option>
-                  <option value="advanced">Advanced Only</option>
+                  <option value="all" className="bg-brand-bg-tertiary text-brand-text-primary">All Difficulties</option>
+                  <option value="basic" className="bg-brand-bg-tertiary text-brand-text-primary">Basic Only</option>
+                  <option value="intermediate" className="bg-brand-bg-tertiary text-brand-text-primary">Intermediate Only</option>
+                  <option value="advanced" className="bg-brand-bg-tertiary text-brand-text-primary">Advanced Only</option>
                 </select>
               </div>
 

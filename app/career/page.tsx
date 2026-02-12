@@ -282,10 +282,12 @@ export default function Career() {
                 <select
                   value={selectedCertification}
                   onChange={(e) => setSelectedCertification(e.target.value)}
-                  className="w-full p-3 border border-claude-border rounded-lg bg-white text-claude-text-primary"
+                  className="w-full p-3 border border-claude-border rounded-lg bg-claude-bg-primary text-claude-text-primary focus:border-claude-accent-orange focus:outline-none"
                 >
                   {Object.entries(certificationLevels).map(([key, cert]) => (
-                    <option key={key} value={key}>{cert.name}</option>
+                    <option key={key} value={key} className="bg-claude-bg-primary text-claude-text-primary">
+                      {cert.name}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -297,11 +299,13 @@ export default function Career() {
                 <select
                   value={targetRole}
                   onChange={(e) => setTargetRole(e.target.value)}
-                  className="w-full p-3 border border-claude-border rounded-lg bg-white text-claude-text-primary"
+                  className="w-full p-3 border border-claude-border rounded-lg bg-claude-bg-primary text-claude-text-primary focus:border-claude-accent-orange focus:outline-none"
                 >
-                  <option value="">Select target...</option>
+                  <option value="" className="bg-claude-bg-primary text-claude-text-secondary">Select target...</option>
                   {Object.entries(certificationLevels).map(([key, cert]) => (
-                    <option key={key} value={key}>{cert.name}</option>
+                    <option key={key} value={key} className="bg-claude-bg-primary text-claude-text-primary">
+                      {cert.name}
+                    </option>
                   ))}
                 </select>
               </div>

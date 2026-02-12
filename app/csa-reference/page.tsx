@@ -239,10 +239,10 @@ export default function CSAReference() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-3 py-2 border border-claude-border rounded-lg bg-claude-bg-primary text-claude-text-primary"
+              className="px-3 py-2 border border-claude-border rounded-lg bg-claude-bg-primary text-claude-text-primary focus:border-claude-accent-orange focus:outline-none"
             >
               {categories.map(category => (
-                <option key={category.value} value={category.value}>
+                <option key={category.value} value={category.value} className="bg-claude-bg-primary text-claude-text-primary">
                   {category.label}
                 </option>
               ))}
