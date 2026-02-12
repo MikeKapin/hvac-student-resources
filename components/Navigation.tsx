@@ -138,12 +138,12 @@ export default function Navigation() {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`lg:hidden fixed top-0 right-0 h-full w-72 max-w-[85vw] bg-brand-bg-secondary border-l border-brand-border z-50 transform transition-transform duration-300 ease-out ${
+        className={`lg:hidden fixed top-0 right-0 h-full w-72 max-w-[85vw] bg-[#1a1a2e] border-l border-brand-border z-50 transform transition-transform duration-300 ease-out shadow-2xl ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         {/* Drawer Header */}
-        <div className="flex items-center justify-between p-4 border-b border-brand-border">
+        <div className="flex items-center justify-between p-4 border-b border-brand-border bg-[#1a1a2e]">
           <span className="text-lg font-semibold text-brand-text-primary">Menu</span>
           <button
             onClick={() => setIsOpen(false)}
@@ -157,7 +157,7 @@ export default function Navigation() {
         </div>
 
         {/* Drawer Links */}
-        <div className="p-4 space-y-2 overflow-y-auto max-h-[calc(100vh-80px)]">
+        <div className="p-4 space-y-2 overflow-y-auto max-h-[calc(100vh-80px)] bg-[#1a1a2e]">
           {/* Home Link */}
           <Link
             href="/"
