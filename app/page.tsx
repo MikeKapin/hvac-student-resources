@@ -40,6 +40,21 @@ export default function Home() {
     },
   ];
 
+  const tools = [
+    {
+      title: 'HVAC Pro Tools',
+      description: 'Professional Canadian HVAC calculators — load calculations, P-T charts, superheat/subcooling, psychrometrics, duct sizing, and unit conversions',
+      href: 'https://hvac-pro-tools-mike-kapin.netlify.app',
+      icon: '🔧',
+    },
+    {
+      title: 'A2L Refrigerant Calculator',
+      description: 'Specialized tools for A2L refrigerant systems — P-T charts, leak detection calibration, leak rate analysis, charge calculations, and system diagnostics',
+      href: 'https://a2l-refrigerant-calculator-mike-kapin.netlify.app',
+      icon: '❄️',
+    },
+  ];
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Hero Section */}
@@ -79,6 +94,37 @@ export default function Home() {
             </div>
           </Link>
         ))}
+      </div>
+
+      {/* Professional Tools Section */}
+      <div className="mb-16">
+        <h2 className="text-2xl font-bold text-brand-text-primary mb-2">🛠️ Professional Tools</h2>
+        <p className="text-brand-text-secondary text-sm mb-6">Interactive calculators for field work and study</p>
+        <div className="grid md:grid-cols-2 gap-6">
+          {tools.map((tool) => (
+            <a
+              key={tool.href}
+              href={tool.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-brand-bg-secondary border border-brand-border rounded-lg p-8 hover:bg-brand-bg-hover transition group"
+            >
+              <div className="text-4xl mb-4">{tool.icon}</div>
+              <h2 className="text-2xl font-bold text-brand-text-primary mb-2 group-hover:text-brand-accent-orange transition">
+                {tool.title}
+              </h2>
+              <p className="text-brand-text-secondary">
+                {tool.description}
+              </p>
+              <div className="mt-4 text-brand-accent-blue group-hover:text-brand-accent-blue-hover transition flex items-center">
+                Open Tool
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
 
       {/* About Section */}
