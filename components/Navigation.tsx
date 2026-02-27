@@ -29,7 +29,6 @@ export default function Navigation() {
     { href: '/g2', label: 'G2 Resources', highlight: false },
     { href: '/g3', label: 'G3 Resources', highlight: false },
     { href: '/quiz', label: '📝 Quiz Generator', highlight: 'orange' },
-    { href: '/circuit-simulator', label: '⚡ Circuit Sim', highlight: 'orange' },
     { href: '/csa', label: 'CSA', highlight: false },
     { href: '/csa-reference', label: '📚 Quick Ref', highlight: 'blue' },
     { href: '/tssa', label: 'TSSA', highlight: false },
