@@ -22,7 +22,7 @@ export default function AccessGate({ onAccessGranted }: AccessGateProps) {
       grantAccess(code);
       onAccessGranted();
     } else {
-      setError('Invalid student or employee number. Please check your ID and try again.');
+      setError('Invalid access code. Please try again.');
       setIsSubmitting(false);
     }
   };
@@ -59,10 +59,10 @@ export default function AccessGate({ onAccessGranted }: AccessGateProps) {
               </svg>
             </div>
             <h2 className="text-xl font-semibold text-brand-dark-text mb-2">
-              Student Access Required
+              Authorized Access Only
             </h2>
             <p className="text-sm text-brand-dark-text-secondary">
-              Enter your student or employee number to access the resources
+              Enter your access code to continue
             </p>
           </div>
 
@@ -72,14 +72,14 @@ export default function AccessGate({ onAccessGranted }: AccessGateProps) {
                 htmlFor="accessCode"
                 className="block text-sm font-medium text-brand-dark-text mb-2"
               >
-                Student / Employee Number
+                Access Code
               </label>
               <input
                 type="text"
                 id="accessCode"
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
-                placeholder="Enter your ID number"
+                placeholder="Enter your access code"
                 className="w-full px-4 py-3 bg-brand-dark-bg border border-brand-dark-border rounded-lg text-brand-dark-text placeholder-brand-dark-text-secondary focus:outline-none focus:ring-2 focus:ring-mike-orange focus:border-transparent"
                 disabled={isSubmitting}
                 autoComplete="off"
